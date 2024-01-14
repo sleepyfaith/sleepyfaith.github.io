@@ -16,7 +16,8 @@
         var dirtData = [{x:1, y:41}];
 		var fsData = [{x:2, y:37}];
 		var bobData = [{x:3, y:45}];
-        
+		var techData = [{x:4, y:41}];
+
 		const cotd = document.getElementById("cotd");
         new Chart(cotd, {
             type: "scatter",
@@ -36,7 +37,12 @@
 				data: bobData,
 				pointRadius: 7,
 				backgroundColor: 'rgb(255, 255, 255)'
-			}]},
+	    	}, {
+				label: "tech",
+				data: techData,
+				pointRadius: 7,
+				backgroundColor: 'rgb(70, 70, 70)'
+		    }]},
             options: {
                 plugins: {
 					title: {
