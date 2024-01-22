@@ -13,6 +13,13 @@ p {
 span {
     display: inline
 }
+a:link, a:visited {
+    color: pink;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
 .container {
     background-color: rgb(0, 0, 0, 0.5);
     color: white;
