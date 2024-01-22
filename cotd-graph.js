@@ -14,9 +14,10 @@
         };
 
         var dirtData = [{x:1, y:41}];
-		var fsData = [{x:2, y:37}];
+		var fsData = [{x:2, y:37}, {x:6, y:47}];
 		var bobData = [{x:3, y:45}];
 		var techData = [{x:4, y:41}];
+		var mixData = [{x:5, y:45}];
 
 		const cotd = document.getElementById("cotd");
         new Chart(cotd, {
@@ -42,6 +43,11 @@
 				data: techData,
 				pointRadius: 7,
 				backgroundColor: 'rgb(70, 70, 70)'
+		    }, {
+				label: "mixed",
+				data: mixData,
+				pointRadius: 7,
+				backgroundColor: 'rgb(255, 165, 0)'
 		    }]},
             options: {
                 plugins: {
