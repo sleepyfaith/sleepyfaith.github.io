@@ -18,6 +18,7 @@
 		var bobData = [{x:3, y:45}];
 		var techData = [{x:4, y:41}];
 		var mixData = [{x:5, y:45}];
+		var reactorData = [{x: 7, y:40}];
 
 		const cotd = document.getElementById("cotd");
         new Chart(cotd, {
@@ -48,7 +49,12 @@
 				data: mixData,
 				pointRadius: 7,
 				backgroundColor: 'rgb(255, 165, 0)'
-		    }]},
+		    }, {
+				label: "mixed",
+				data: mixData,
+				pointRadius: 7,
+				backgroundColor: 'rgb(82, 93, 255)'
+			}]},
             options: {
                 plugins: {
 					title: {
