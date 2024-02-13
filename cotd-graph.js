@@ -50,8 +50,8 @@
 				pointRadius: 7,
 				backgroundColor: 'rgb(255, 165, 0)'
 		    }, {
-				label: "mixed",
-				data: mixData,
+				label: "reactor",
+				data: reactorData,
 				pointRadius: 7,
 				backgroundColor: 'rgb(82, 93, 255)'
 			}]},
