@@ -59,7 +59,7 @@
                 plugins: {
 					title: {
 						display: true,
-						text: "Cup of the Day",
+						text: "Stadium Car Cup of the Day",
 						font: {
 							size: 40
 						}
