@@ -13,23 +13,23 @@
             }
         };
 
-        var plstcData = [{x:1, y:4}];
+        var multiData = [{x:1, y:28}];
 
-		const cotn = document.getElementById("cotn");
+		const cotn = document.getElementById("cotd-rally");
         new Chart(cotn, {
             type: "scatter",
             data: {
                 datasets: [{
-                label: 'plastic',
-                data: plstcData,
+                label: 'multi-surface',
+                data: multiData,
                 pointRadius: 7,
-                backgroundColor: 'rgb(255, 253, 122)'
-            }]},
+				backgroundColor: 'rgb(255, 165, 0)'
+		}]},
             options: {
                 plugins: {
 					title: {
 						display: true,
-						text: "Cup of the Night",
+						text: "Rally Car Cup Of The Day",
 						font: {
 							size: 40
 						}
