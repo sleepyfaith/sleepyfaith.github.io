@@ -17,10 +17,10 @@
 		var fsData = [{x:2, y:37}, {x:6, y:47}];
 		var bobData = [{x:3, y:45}];
 		var techData = [{x:4, y:41}];
-		var mixData = [{x:5, y:45}];
+		var multiData = [{x:5, y:45}];
 		var reactorData = [{x: 7, y:40}];
 
-		const cotd = document.getElementById("cotd");
+		const cotd = document.getElementById("cotd-stadium");
         new Chart(cotd, {
             type: "scatter",
             data: {
@@ -45,8 +45,8 @@
 				pointRadius: 7,
 				backgroundColor: 'rgb(70, 70, 70)'
 		    }, {
-				label: "mixed",
-				data: mixData,
+				label: "multi-surface",
+				data: multiData,
 				pointRadius: 7,
 				backgroundColor: 'rgb(255, 165, 0)'
 		    }, {
