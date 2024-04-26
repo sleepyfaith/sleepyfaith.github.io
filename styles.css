@@ -1,18 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+
 * {
     font-family: 'Quicksand', sans-serif;
 }
 body {
-    background-image: url(Spring_Forest.png);
-    background-size: cover;
+    background-color: #1c1c1c;
 }
 p {
     padding: 0.8rem;
     font-weight: bold;
 }
-span {
-    display: inline
-}
+
 a:link, a:visited {
     color: pink;
     text-decoration: none;
@@ -21,23 +19,24 @@ a:hover {
     text-decoration: underline;
 }
 .container {
-    background-color: rgb(0, 0, 0, 0.5);
     color: white;
-    width: 43vw;
-    height: fit-content;
+    width: 89vw;
     text-align: center;
-    padding: 0.25rem 1.25rem 0.25rem 1.25rem;
+    border: 0.3vw solid; 
+    border-image: linear-gradient(180deg, #5BCEFA 20%, #F5A9B8 20%, 40%, #FFFFFF 40%, 60%, #F5A9B8 60%, 80%, #5BCEFA 80%);
+    border-image-slice: 1;
     margin: 1rem;
-    display: inline-grid;
 }
 .information {
-    grid-template-columns: auto auto;
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: center;
 }
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 99%;
-    background-color: rgb(0, 0, 0, 0.5);
-    color: white;
-    font-size: 1.1
+@media only screen and (min-width: 1000px) {
+    .information {
+        grid-template-columns: 47.5% 47.5%;
+    }
+    .container {
+        width: 43vw;
+    }
 }
