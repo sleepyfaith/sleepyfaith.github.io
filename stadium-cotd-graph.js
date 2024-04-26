@@ -43,7 +43,7 @@
 				label: "tech",
 				data: techData,
 				pointRadius: 7,
-				backgroundColor: 'rgb(70, 70, 70)'
+				backgroundColor: 'rgb(150, 150, 150)'
 		    }, {
 				label: "multi-surface",
 				data: multiData,
