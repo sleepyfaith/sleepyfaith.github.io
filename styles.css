@@ -32,6 +32,51 @@ a:hover {
     grid-template-columns: 100%;
     justify-content: center;
 }
+.footer {
+    display: grid;
+    grid-template-columns: repeat(5, 4%);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 6vh;
+    color: white;
+    border-top: 0.3vw solid; 
+    border-image: linear-gradient(90deg, #5BCEFA 20%, #F5A9B8 20%, 40%, #FFFFFF 40%, 60%, #F5A9B8 60%, 80%, #5BCEFA 80%);
+    border-image-slice: 1;
+
+    p {
+        color: #7a7979;
+        float: right;
+        opacity: 100%;
+        position: fixed;
+        right: 0;
+        top: 94vh;
+    }
+    a {
+        color: #7a7979;
+        text-decoration: underline;
+    }
+}
+.icon-container {
+    transition-duration: 100ms;
+    transform-origin: 0%;
+    position: relative;
+    top: 5%;
+    margin-left: 30%;
+    width: 6.7vw;
+    aspect-ratio: 1;
+    img {
+        width: 40%;
+    }
+    span {
+        display: none;
+    }
+}  
+.icon-container:hover {
+    width: 9vw;
+    top: -3%;
+}
 @media only screen and (min-width: 1000px) {
     .information {
         grid-template-columns: 47.5% 47.5%;
