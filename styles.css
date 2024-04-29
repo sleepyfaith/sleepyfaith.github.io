@@ -44,6 +44,7 @@ a:hover {
     border-top: 0.3vw solid; 
     border-image: linear-gradient(90deg, #5BCEFA 20%, #F5A9B8 20%, 40%, #FFFFFF 40%, 60%, #F5A9B8 60%, 80%, #5BCEFA 80%);
     border-image-slice: 1;
+    gap: 2vh;
 
     p {
         vertical-align: center;
@@ -52,7 +53,7 @@ a:hover {
         opacity: 100%;
         position: relative;
         top: -1vh;
-        left: 74vw;
+        left: 58vw;
         width: 10ch;
         font-size: 0.94vh;
     }
@@ -64,17 +65,17 @@ a:hover {
 .icon-container {
     transition-duration: 100ms;
     position: relative;
-    top: 13%;
     margin-left: 30%;
     width: 6.7vh;
+    top: 4%;
     aspect-ratio: 1;
     img { 
-        width: 4vw;
+        width: 6vw;
     }
 
 }  
 
-@media only screen and (min-width: 1100px) {
+@media only screen and (min-width: 1000px) {
     .information {
         grid-template-columns: 47.5% 47.5%;
     }
@@ -83,13 +84,14 @@ a:hover {
     }
     .footer {
         height: 6vh;
+        gap: 0;
         p {
             width: 17ch;
+            left: 75vw;
             font-size: 0.94vw;
         }
     }
     .icon-container {
-        top: 4%;
         width: 6.7vw;
         img {
             width: 40%
@@ -98,5 +100,5 @@ a:hover {
     .icon-container:hover {
         width: 9vw;
         top: -3%;
-    }    
+    }
 }
