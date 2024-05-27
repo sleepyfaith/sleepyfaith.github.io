@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 * {
     font-family: 'Quicksand', sans-serif;
@@ -6,11 +6,15 @@
 body {
     background-color: #1c1c1c;
 }
+h1 {
+    font-weight: 700;
+    text-decoration: underline;
+}
 p {
     padding: 0.8rem;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 1.1rem;
 }
-
 a:link, a:visited {
     color: pink;
     text-decoration: none;
@@ -33,6 +37,7 @@ a:hover {
     justify-content: center;
 }
 .footer {
+    background-color: #1c1c1c;
     display: grid;
     grid-template-columns: repeat(5, 4%);
     position: fixed;
@@ -74,7 +79,27 @@ a:hover {
     }
 
 }  
+#pc-specs {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 1rem;
+}
+#pc-specs > h1 {
+    text-decoration: underline;
+    color: pink;
+    font-size: 2rem;
+    width: 100%;
+}
 
+#pc-specs > p {
+    width: 20%;
+}
+#pc-specs > p > span { 
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: underline;
+}
 @media only screen and (min-width: 1000px) {
     .information {
         grid-template-columns: 47.5% 47.5%;
@@ -100,5 +125,8 @@ a:hover {
     .icon-container:hover {
         width: 9vw;
         top: -3%;
+    }
+    #pc-specs {
+        margin-left: 50%;
     }
 }
