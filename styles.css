@@ -16,7 +16,7 @@ p {
     font-size: 1.1rem;
 }
 a:link, a:visited {
-    color: pink;
+    color: #aa7bff;
     text-decoration: none;
 }
 a:hover {
@@ -87,7 +87,7 @@ a:hover {
 }
 #pc-specs > h1 {
     text-decoration: underline;
-    color: pink;
+    color: #aa7bff;
     font-size: 2rem;
     width: 100%;
 }
