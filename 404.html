@@ -31,17 +31,21 @@
 
       h1 {
         font-size: 10rem;
-        color: transparent;
+        color: white;
         position: relative;
         bottom: 2.5rem;
       }
 
       h2 {
         font-size: 5rem;
-        color: transparent;
+        color: white;
         position: relative;
         bottom: 1.2rem;
       }
+      
+      @-moz-document url-prefix() {
+        h1, h2 { color: transparent; }
+	    }
     </style>
   </head>
   <body>
