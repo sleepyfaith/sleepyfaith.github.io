@@ -14,7 +14,7 @@
         };
 
         var dirtData = [{x:1, y:41}];
-		var fsData = [{x:2, y:37}, {x:6, y:47}];
+		var fsData = [{x:2, y:37}, {x:6, y:47}, {x:8, 27}];
 		var bobData = [{x:3, y:45}];
 		var techData = [{x:4, y:41}];
 		var multiData = [{x:5, y:45}];
