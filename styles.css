@@ -81,7 +81,7 @@ a:hover {
 }  
 #pc-specs > .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, auto);
     margin-left: 1rem;
 }
 #pc-specs > h1 {
@@ -99,7 +99,7 @@ a:hover {
 }
 @media only screen and (min-width: 1000px) {
     .information {
-        grid-template-columns: 47.5% 47.5%;
+        grid-template-columns: repeat(2, 47.5%);
     }
     .container {
         width: 43vw;
@@ -122,8 +122,5 @@ a:hover {
     .icon-container:hover {
         width: 9vw;
         top: -3%;
-    }
-    #pc-specs {
-        margin-left: 50%;
     }
 }
