@@ -79,10 +79,9 @@ a:hover {
     }
 
 }  
-#pc-specs {
-    justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
+#pc-specs > .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     margin-left: 1rem;
 }
 #pc-specs > h1 {
@@ -92,10 +91,8 @@ a:hover {
     width: 100%;
 }
 
-#pc-specs > p {
-    width: 20%;
-}
-#pc-specs > p > span { 
+
+#pc-specs > .grid-container > p > span { 
     font-size: 1.5rem;
     font-weight: 700;
     text-decoration: underline;
