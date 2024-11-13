@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+:root {
+    --background: #1c1c1c;
+    --player-one: rgb(255, 93, 93);
+    --player-two: rgb(255, 255, 131);
+
+    --red: rgb(255, 93, 93);
+    --orange: rgb(255, 197, 109);
+    --yellow: rgb(255, 255, 158);
+    --green: rgb(131, 255, 137);
+    --blue: rgb(157, 253, 253); 
+    --purple: rgb(199, 131, 255);
+}
+
+body {
+    background-color: var(--background);
+}
+
+.board {
+    position: fixed;
+    display: grid;
+    align-items: center;
+    background-color: rgb(68, 68, 255);
+    grid-template-columns: repeat(7, 1fr);
+    width: 75vw;
+    height: 80vh;
+    left: 10%;
+    top: 10%;
+    border-radius: 2%;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+.token {
+    width: 5vw;
+    margin-bottom: 10%;
+    margin-left: 28%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+.empty {
+    background-color: var(--background);
+}
+.red {
+    background-color: var(--red);
+}
+.orange {
+    background-color: var(--orange);
+}
+.yellow {
+    background-color: var(--yellow);
+}
+.green {
+    background-color: var(--green);
+}
+.blue {
+    background-color: var(--blue);
+}
+.purple {
+    background-color: var(--purple);
+}
+.one {
+    background-color: var(--player-one);
+}
+.two {
+    background-color: var(--player-two);
+}
+
+.scorecard {
+    color: white;
+    position: relative;
+    float: right;
+    right: 2.5%;
+    font-size: 5vw;
+    font-weight: 500;
+}
+.score-one {
+    color: var(--player-one);
+}
+.score-two {
+    color: var(--player-two);
+}
+
+.dropdowns {
+    position:absolute;
+    display: grid;
+    grid-template-columns: auto;
+    width: fit-content;
+    gap: 10vh;
+    left: -2%;
+    top: 1%;
+}
+.dropdown-button {
+    display: grid;
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    aspect-ratio: 1;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    min-width: 12rem;
+}
+.dropdown-content {
+    display: none;
+    position: relative;
+    width: 90%;
+    height: 90vh;
+    left: 3%;
+    z-index: 1;
+    gap: 20%
+}
+
+
+.show {
+    display: block;
+}
+
+.clear-board {
+    background-color: #535353;  
+    color: white;
+    float: right;
+    padding: 2ch;
+    font-size: 1vw;
+    font-weight: 500;
+    border-radius: 10%;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    left: 5%;
+}
