@@ -2,7 +2,62 @@ connectFour = false
 full = false
 addedScore = false
 
+playedMoves = []
+undone = []
+function undoMove() {
+    if (!connectFour && !full) {
+        move = playedMoves.pop()
+        removed = undefined
+
+        board = document.getElementsByClassName("board")[0];
+        column = board.children[move]
+        console.log(column)
+
+
+
+        for (i=0; i < column.children.length; i++) {
+            token = column.children[i]
+            console.log(token)
+            if (!token.className.includes("empty")) {
+                removed = token.className
+                token.className = "token empty"
+                break
+            }
+
+        }
+
+        undone.push([move, removed])
+        document.body.id = (document.body.id === "one") ? "two" : "one";
+    }
+}
+
+function redoMove() {
+    if (!connectFour && !full) {
+
+        move = undone[undone.length-1][0]
+        removed = undone[undone.length-1][1]
+
+        board = document.getElementsByClassName("board")[0];
+        column = board.children[move]
+        Array.from(column.children).forEach(token => {
+            if (token.className.includes("empty")) {
+                lowest = token;
+            }
+        })
+        if (lowest) {
+            lowest.className = removed
+            isGameOver(document.body.id)
+            document.body.id = (document.body.id === "one") ? "two" : "one";    
+        }
+
+        undone.pop()
+        playedMoves.push(move)
+    }
+}
+
 function clearBoard() {
+    undone = []
+    playedMoves = []
     const board = document.getElementsByClassName("board")[0];
     Array.from(board.children).forEach(column => {
         Array.from(column.children).forEach(token => {
@@ -16,7 +71,10 @@ function clearBoard() {
 
 function addToken(c) {
     if (!connectFour && !full) {
-
+        
+        playedMoves.push(c)
+        undone = []
+        
         const board = document.getElementsByClassName("board")[0];
         const column = board.children[c];
 
@@ -90,14 +148,14 @@ function isGameOver(turn) {
             }
         });
     });
-    if (full) {}
-    else if (connectFour) {
+    if (connectFour) {
         winner = document.body.id
         score = document.getElementsByClassName("score-"+winner)[0]
         
         score.innerHTML = parseInt(score.innerHTML) + 1
         addedScore = true
-    }
+    } else if (full) {/* do something in future */}
+
 
 }
 function changeColour(id) {
@@ -139,3 +197,20 @@ window.onclick = function(event) {
         }
     } 
 }
+
+window.onkeydown = function(event) {
+    console.log(event.code)
+    switch (event.code) {
+        case "ArrowRight":
+            redoMove()
+            break
+        case "ArrowLeft":
+            undoMove()
+            break
+        case "Backspace":
+            clearBoard()
+            break
+        default:
+            break
+    }
+};  
