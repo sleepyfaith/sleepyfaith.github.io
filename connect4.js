@@ -4,6 +4,16 @@ addedScore = false
 
 playedMoves = []
 undone = []
+
+// confetti default settings
+const defaults = {
+    spread: 360,
+    ticks: 50,
+    gravity: 1,
+    decay: 0.94,
+    startVelocity: 50,
+};
+
 function undoMove() {
     if (!connectFour && !full) {
         move = playedMoves.pop()
@@ -154,10 +164,22 @@ function isGameOver(turn) {
         
         score.innerHTML = parseInt(score.innerHTML) + 1
         addedScore = true
-    } else if (full) {/* do something in future */}
+
+        winnerToken = document.querySelector("."+winner);
+        winnerColour = rgbToHex(window.getComputedStyle(winnerToken).backgroundColor);
+        setTimeout(confettiEmoji(["circle", "square"], undefined, [winnerColour]), 0);
+
+    } else if (full) {
+        setTimeout(confettiEmoji("emoji", ["😐"]), 0);
+    }
 
 
 }
+function rgbToHex(rgb) {
+    const [r, g, b] = rgb.match(/\d+/g).map(Number);
+    return "#" + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1).toUpperCase();
+}
+
 function changeColour(id) {
 
     if (id == "one" || id == "two") {
@@ -181,6 +203,30 @@ function changeColour(id) {
     }
 }
 
+function confettiEmoji(type, emojis, colours) {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)")) return    
+    if (type === "emoji") {
+        confetti({
+            ...defaults,
+            particleCount: 100,
+            scalar: 2,
+            shapes: [type],
+            shapeOptions: {
+                emoji: {
+                    value: emojis,
+                },
+            },
+        });
+    } else {
+        confetti({
+            ...defaults,
+            particleCount: 100,
+            scalar: 2,
+            shapes: type,
+            colors: colours,
+        });
+    }
+}
 
 window.onload = function(event) {
     document.documentElement.style.setProperty('--player-one', localStorage.getItem("one"));
