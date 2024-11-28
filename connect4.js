@@ -204,7 +204,6 @@ function changeColour(id) {
 }
 
 function confettiEmoji(type, emojis, colours) {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)")) return    
     if (type === "emoji") {
         confetti({
             ...defaults,
