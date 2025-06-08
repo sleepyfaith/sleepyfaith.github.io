@@ -38,6 +38,7 @@ a:hover {
     justify-content: center;
 }
 .footer {
+    justify-content: center;
     background-color: #1c1c1c;
     display: grid;
     grid-template-columns: repeat(5, 4%);
@@ -61,26 +62,26 @@ a:hover {
         width: 17ch;
         font-size: 2vw;
     }
-    a {
-        color: #7a7979;
-        text-decoration: underline;
-    }
 }
 .icons.grid-container {
+    width: fit-content;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    margin-left: 30%;
-
+    margin-left: 20%;
 }
+
 .icon-container {
     position: relative;
-    width: 6.7vh;
-    top: 4%;
+    width: 7vh;
+    top: 15%;
     aspect-ratio: 1;
     img { 
-        width: 6vw;
+        width: 2vw !important;
     }
 
+}
+.twitter, .youtube {
+    top: 25%;
 }
 #pc-specs > .grid-container {
     display: grid;
@@ -133,9 +134,12 @@ a:hover {
         }
     }
     .icon-container:hover {
-        top: -3%;
+        top: 12%;
         img {
-            width: 60px;
+           transform: scale(120%);
         }
+    }
+    .twitter:hover, .youtube:hover {
+        top: 22%;
     }
 }
