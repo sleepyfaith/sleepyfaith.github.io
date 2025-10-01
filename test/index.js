@@ -1,5 +1,7 @@
 
 
+
+
 class Window {
     constructor(type, title, content) {
         this.type = type
@@ -34,6 +36,10 @@ class Window {
         var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
         const el = this.el
         const winType = this.type
+        
+        const Xmargin = 700
+        const Ymargin = 486
+
         document.getElementsByClassName(`${this.type}-titlebar`)[0].onmousedown = dragMouseDown;
         function dragMouseDown(e) {
             e = e || window.event; 
@@ -56,10 +62,20 @@ class Window {
             pos2 = pos4 - e.clientY;
             pos3 = e.clientX;
             pos4 = e.clientY;
+                        
+            let newLeft = el.offsetLeft - pos1;
+            let newTop = el.offsetTop - pos2;
 
-        
-            el.style.left = (el.offsetLeft - pos1) + "px";
-            el.style.top = (el.offsetTop - pos2) + "px";
+            const maxX = window.innerWidth - el.offsetWidth + Xmargin
+            const maxY = window.innerHeight - el.offsetHeight + Ymargin
+            
+            console.log(window.innerWidth, window.innerHeight)
+
+            newLeft = Math.max(-Xmargin, Math.min(newLeft, maxX));
+            newTop  = Math.max(40, Math.min(newTop, maxY));
+
+            el.style.left = newLeft + "px";
+            el.style.top = newTop + "px";
             
         }
 
@@ -102,7 +118,7 @@ class ProjectsWindow extends Window {
                 <i class="fa-solid fa-circle" id="yellow" style="color: rgb(255, 255, 158);"></i>
             </div>
 
-            <div class="app-icon" id="maze-game">
+            <div class="app-icon" id="maze-game" onclick="new MazeGameWindow()">
                 <i class="fa-solid fa-signs-post"></i>
             </div>
 
@@ -134,6 +150,17 @@ class SpecsWindow extends Window {
                 <p><i class="fa-solid fa-hard-drive"></i> Seagate Exos 8TB HDD</p>
                 <p><i class="fa-solid fa-display"></i>MSI RTX 3060</p>
                 <p><a href="https://uk.pcpartpicker.com/list/JFTcjn" target="_blank" style="font-weight:bold"><i class="fa-solid fa-link"></i> specs</a></p>
+            `)
+    }
+}
+
+
+class MazeGameWindow extends Window {
+    constructor() {
+        super("maze", "maze c:", `
+            
+            <iframe src="../maze" width="143%" height="143%" style="border:none;transform:scale(0.7);transform-origin: 0 0;"></iframe>
+
             `)
     }
 }
