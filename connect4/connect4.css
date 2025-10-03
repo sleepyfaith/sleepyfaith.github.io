@@ -22,7 +22,7 @@ body {
 }
 
 .board {
-    position: fixed;
+    position: absolute;
     display: grid;
     align-items: center;
     background-color: rgb(68, 68, 255);
@@ -87,15 +87,6 @@ body {
     color: var(--player-two);
 }
 
-.dropdowns {
-    position:absolute;
-    display: grid;
-    grid-template-columns: auto;
-    width: fit-content;
-    gap: 10vh;
-    left: -2%;
-    top: 1%;
-}
 .dropdown-button {
     display: grid;
     padding: 16px;
@@ -115,12 +106,8 @@ body {
     display: none;
     position: relative;
     width: 90%;
-    height: 90vh;
-    left: 3%;
     z-index: 1;
-    gap: 20%
 }
-
 
 .show {
     display: block;
@@ -133,9 +120,57 @@ body {
     padding: 2ch;
     font-size: 1vw;
     font-weight: 500;
-    border-radius: 10%;
+    border-radius: 10px;
     user-select: none;
     cursor: pointer;
     position: relative;
     left: 5%;
+}
+
+
+@media only screen and (max-width:  767px) {
+    .board {
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100vw;
+        height: 30vh;
+    }
+    .clear-board {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1rem;
+    }
+    .scorecard {
+        width: fit-content;
+        position: absolute;
+        float: left;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -5%;
+        font-size: 6rem;
+    }
+    .token {
+        width: 4vh;
+    }
+    .dropdown#one {
+        position: absolute;
+        top: 20vh;
+        left: -5vh;
+    }
+    .dropdown#two {
+        position: absolute;
+        top: 75vh;
+        left: -5vh;
+    }
+    .show {
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        height: 8vh;
+        gap: 1rem;
+        align-content: flex-start;
+        left: 4.9vh;
+    }
 }

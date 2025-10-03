@@ -1,40 +1,27 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <link rel="stylesheet" href="connect4.css">
         <script src="connect4.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
     </head>
     <body id="one">
-
+        <div class="clear-board button" onclick="clearBoard()">clear board</div>
         <p class="scorecard"><span class="score-one">0</span>-<span class="score-two">0</span></p>
-        <div class="dropdowns">
-            <div class="dropdown colour-changer" id="one">
-                <button onclick="changeColour('one')" class="dropdown-button token one"></button>
-                <div id="one-dropdown" class="dropdown-content">
-                    <div class="token red" onclick="changeColour('red')"></div>
-                    <div class="token orange" onclick="changeColour('orange')"></div>
-                    <div class="token yellow" onclick="changeColour('yellow')"></div>
-                    <div class="token green" onclick="changeColour('green')"></div>
-                    <div class="token blue" onclick="changeColour('blue')"></div>
-                    <div class="token purple" onclick="changeColour('purple')"></div>
-                </div>
-            </div>
-    
-            <div class="dropdown colour-changer" id="two">
-                <button onclick="changeColour('two')" class="dropdown-button token two"></button>
-                <div id="two-dropdown" class="dropdown-content">
-                    <div class="token red" onclick="changeColour('red')"></div>
-                    <div class="token orange" onclick="changeColour('orange')"></div>
-                    <div class="token yellow" onclick="changeColour('yellow')"></div>
-                    <div class="token green" onclick="changeColour('green')"></div>
-                    <div class="token blue" onclick="changeColour('blue')"></div>
-                    <div class="token purple" onclick="changeColour('purple')"></div>
-                </div>
-            </div>
-    
-        </div>
 
+        <div class="dropdown colour-changer" id="two">
+            <button onclick="changeColour('two')" class="dropdown-button token two"></button>
+            <div id="two-dropdown" class="dropdown-content">
+                <div class="token red" onclick="changeColour('red')"></div>
+                <div class="token orange" onclick="changeColour('orange')"></div>
+                <div class="token yellow" onclick="changeColour('yellow')"></div>
+                <div class="token green" onclick="changeColour('green')"></div>
+                <div class="token blue" onclick="changeColour('blue')"></div>
+                <div class="token purple" onclick="changeColour('purple')"></div>
+            </div>
+        </div>
         <div class="board">
             <div class="column" onclick="addToken(0)">
                 <div class="token empty"></div>
@@ -93,6 +80,17 @@
                 <div class="token empty"></div>
             </div>
         </div>
-        <div class="clear-board button" onclick="clearBoard()">clear board</div>
+        <div class="dropdown colour-changer" id="one">
+            <button onclick="changeColour('one')" class="dropdown-button token one"></button>
+            <div id="one-dropdown" class="dropdown-content">
+                <div class="token red" onclick="changeColour('red')"></div>
+                <div class="token orange" onclick="changeColour('orange')"></div>
+                <div class="token yellow" onclick="changeColour('yellow')"></div>
+                <div class="token green" onclick="changeColour('green')"></div>
+                <div class="token blue" onclick="changeColour('blue')"></div>
+                <div class="token purple" onclick="changeColour('purple')"></div>
+            </div>
+        </div>
+        
     </body>
 </html>
