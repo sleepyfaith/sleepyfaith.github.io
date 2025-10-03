@@ -1,5 +1,6 @@
 
 
+const isMobile = !window.matchMedia("(min-width: 768px)").matches;
 
 
 class Window {
@@ -23,7 +24,10 @@ class Window {
         win.className = `${this.type}-window window`;
 
 
-        win.innerHTML = `<div class="${this.type}-titlebar titlebar"><p>${this.title}</p> <button class='close-btn'>x</button></div>`
+        var closebtnStr = "x"
+        if (isMobile) closebtnStr = `<i class="fa-solid fa-house"></i>`
+
+        win.innerHTML = `<div class="${this.type}-titlebar titlebar"><p>${this.title}</p> <button class='close-btn'>${closebtnStr}</button></div>`
 
         if (this.content instanceof HTMLElement) {
             win.appendChild(this.content);
@@ -42,6 +46,9 @@ class Window {
     makeDraggable() {
 
         if (this.type == "popup") return;
+
+        if (isMobile) return;
+    
 
         var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
         const el = this.el
@@ -228,7 +235,7 @@ class MazeGameWindow extends Window {
     constructor() {
         super("maze", "maze c:", `
             
-            <iframe src="../maze" width="143%" height="143%" style="border:none;transform:scale(0.7);transform-origin: 0 0;"></iframe>
+            <iframe src="../maze" style="width: 100%; height: 100%; zoom: 0.7; border: none;"></iframe>
 
             `)
     }
@@ -237,7 +244,7 @@ class Connect4Window extends Window {
     constructor() {
         super("connect4", "connect4 :o", `
             
-            <iframe src="../connect4" width="143%" height="143%" style="border:none;transform:scale(0.7);transform-origin: 0 0;"></iframe>
+            <iframe src="../connect4" style="width: 100%; height: 100%; zoom: 0.7; border: none;"></iframe>
 
             `)
     }

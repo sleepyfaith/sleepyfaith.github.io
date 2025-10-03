@@ -1,0 +1,182 @@
+body {
+    background-color: #1c1c1c;
+    font-family: sans-serif;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+html, body {
+    margin: 0
+}
+
+a:link, a:visited {
+    color: #aa7bff;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.panel {
+    display: flex;
+    justify-content: left;
+    background-color: rgb(56, 34, 59);
+    color: white;
+    position: sticky;
+    width: 100%;
+    padding: 0, 20px;
+    align-items: center;
+}
+.app-icon#projects::after {
+    color: white;
+    top: 100%;
+    left: 50%;
+    transform: translate(-28%, 50%);
+}
+
+.window {
+    position: absolute;
+    color: white;
+}
+
+.titlebar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(48, 48, 48);
+    height: 1rem;
+    user-select: none;
+    padding: 5px;
+    cursor: grab;
+    border-radius: 5px 5px, 0, 0;
+
+    p {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        pointer-events: none;
+    };
+
+    .close-btn {
+        position: absolute;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 1;
+    }
+}
+
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    flex-wrap: wrap;
+    gap: 1rem;
+    
+    border: 3px solid rgb(78, 78, 78);
+    border-radius: 0;
+
+    p {
+        width: 43%;
+        text-align: center;
+        background-color: #333;
+        padding: 1rem;
+        border-radius: 5px;    
+    };
+
+}
+
+.projects-window .content {
+    text-align: center;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+
+    .app-icon {
+        margin: 0.5rem;  
+    };
+    .app-icon i {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    };
+}
+
+
+.app-icon#connect4 i {
+    top: 5%;
+    transform: translate(-50%, 0);
+}
+.app-icon#connect4 i#yellow {
+    top: 50%;
+}
+.popup-window .content {
+    gap: 2rem;
+    height: 8rem;
+    background-color: rgb(36, 36, 36);
+    border: 3px solid rgb(26, 26, 26);
+}
+.popup-window {
+    z-index: 1000 !important;
+}
+.popup-buttons {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+
+    .confirm-btn, .cancel-btn {
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .cancel-btn {
+        background-color: rgb(255, 139, 139) 
+    }
+    .confirm-btn {
+        background-color: rgb(180, 255, 180);
+        font-weight: bold;
+    }
+    .cancel-btn:hover {
+        background-color: rgb(255, 139, 139, 0.75) 
+    }
+    .confirm-btn:hover {
+        background-color: rgb(180, 255, 180, 0.75);
+    }
+}
+.desktop {
+    display: flex;
+    flex-wrap: wrap;
+}
+.app-icon {
+    aspect-ratio: 1;
+    width: 3rem;
+    font-size: 1.5rem;
+    color: white;
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+}
+#projects {
+    border: none;
+    font-size: 3rem;
+    color: pink;
+}
+.app-icon::after {
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: 0.75rem;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+

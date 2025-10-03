@@ -1,0 +1,115 @@
+.panel {
+    height: 1.5rem;
+    .widget {
+        margin: 0.5rem;
+    };
+}
+
+.desktop {
+    margin-top: 2rem;
+    margin-left: 2rem;  
+    gap: 5rem;
+
+    justify-content: left;
+}
+
+#projects {
+    transform: translate(-25%, -15%);
+}
+
+.window { 
+    width: 100vw;
+
+    left: 0;
+    top: 1.5rem;
+}
+.window::after {
+    display: inline-block;
+    width: 100vw;
+    height: 3rem;
+    
+    background-color: rgb(56, 34, 59);
+    content:" "
+}
+.popup-window { 
+    width: 80%;
+    gap: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.popup-window .content {
+    height: 15rem;
+    p {
+        width: 70%;    
+        background-color: transparent;
+        padding: 0;
+    }
+}
+.popup-buttons {
+    position:relative;
+    transform: translateY(-100%)
+}
+.popup-window::after {
+    display: inline;
+}
+
+.projects-window .content .app-icon {
+    margin: 2rem;
+}
+
+.content {
+    height: calc(100vh - 10rem);
+    background-color: rgba(112, 112, 112);
+
+    p {
+        width: 35%;
+        height: 3rem;
+        align-content: center;
+    }
+}
+
+
+.close-btn {
+    top: calc(100vh - 7.5rem);
+
+    aspect-ratio: 1;
+    width: 2.25rem;
+
+    background-color: black;
+
+    border: none;
+    border-radius: 100vh;
+}
+
+.app-icon#connect4 {
+    font-size: 1.3rem;
+}
+.app-icon#connect4::after {
+    content: "connect4";
+}
+
+.app-icon#maze-game::after {
+    content: "maze";
+}
+.app-icon#faithbot::after {
+    content: "faithbot.py";
+}
+.app-icon#mazegen::after {
+    content: "mazegenerator.py";
+}
+.app-icon#website::after {
+    content: "mywebsite.here";
+}
+.app-icon#about::after {
+    content: "about me";
+}
+.app-icon#likes::after {
+    content: "likes";
+}
+.app-icon#specs::after {
+    content: "pc specs";
+}
+.app-icon#projects::after {
+    content: "projects";
+}
