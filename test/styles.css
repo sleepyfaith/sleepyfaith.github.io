@@ -1,23 +1,18 @@
 body {
     background-color: #1c1c1c;
     font-family: sans-serif;
-
     overflow: hidden;
     height: 100%;
     width: 100%;
 }
-
 html, body {
     margin: 0;
     padding: 0;
 }
-
 .panel {
     display: flex;
-    background-color: rgb(56, 34, 59); 
+    background-color: rgb(56, 34, 59);
     color: white;
-
-
     position: sticky;
     width: 100%;
     height: 2.5rem;
@@ -25,22 +20,18 @@ html, body {
     justify-content: space-between;
     align-items: center;
 }
-
 .titlebar p {
     margin: 0;
     padding: 0;
-
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     pointer-events: none;
 }
 .titlebar button.close-btn {
-
     position: absolute;
     left: 100%;
     transform: translateX(-150%);
-
     background: transparent;
     border: none;
     color: white;
@@ -48,45 +39,31 @@ html, body {
     cursor: pointer;
     z-index: 1;
 }
-
-
 .titlebar {
-
     display: flex;
     justify-content: space-around;
     align-items: center;
-
     background-color: rgb(48, 48, 48);
     height: 1rem;
     user-select: none;
     padding: 5px;
     cursor: grab;
     border-radius: 5px 5px, 0, 0;
-}   
-
-
-.about-window .content,
-.likes-window .content,
-.specs-window .content {
+}
+.about-window .content, .likes-window .content, .specs-window .content {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    
     gap: 1rem;
 }
-.about-window .content p,
-.likes-window .content p,
-.specs-window .content p  {
+.about-window .content p, .likes-window .content p, .specs-window .content p {
     width: 43%;
-
     text-align: center;
     background-color: #333;
     padding: 1rem;
-
     border-radius: 5px;
 }
-
 a:link, a:visited {
     color: #aa7bff;
     text-decoration: none;
@@ -94,258 +71,198 @@ a:link, a:visited {
 a:hover {
     text-decoration: underline;
 }
-
-
-
 .projects-window .content {
     display: flex;
-
     gap: 2rem;
 }
-
 .window .app-icon {
     width: 5rem;
     height: 5rem;
     font-size: 2rem;
-
     margin: 0.5rem;
 }
-
 .window .app-icon i {
     position: absolute;
-
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
-
 .window .app-icon#connect4 i {
     top: 5%;
     transform: translate(-50%, 0);
 }
-
-
 .app-icon#connect4 i#yellow {
     top: 50%;
 }
-
 .app-icon#connect4::after {
     font-weight: bold;
-
     white-space: nowrap;
     content: "connect4.app";
     font-size: 0.75rem;
-
-    position: absolute; 
-    top: 100%;           
-    left: 50%;         
-    transform: translate(-50%, 50%); 
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 50%);
 }
-
 .app-icon#maze-game::after {
     font-weight: bold;
-
     white-space: nowrap;
     content: "maze.app";
     font-size: 0.75rem;
-
-    position: absolute; 
-    top: 100%;           
-    left: 50%;         
-    transform: translate(-50%, 50%); 
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 50%);
 }
 .app-icon#faithbot::after {
     font-weight: bold;
-
     white-space: nowrap;
     content: "faithbot.py";
     font-size: 0.75rem;
-
-    position: absolute; 
-    top: 100%;           
-    left: 50%;         
-    transform: translate(-50%, 50%); 
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 50%);
 }
 .app-icon#mazegen::after {
     font-weight: bold;
-
     white-space: nowrap;
     content: "mazegenerator.py";
     font-size: 0.75rem;
-
-    position: absolute; 
-    top: 100%;           
-    left: 50%;         
-    transform: translate(-50%, 50%); 
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 50%);
 }
 .app-icon#website::after {
     font-weight: bold;
-
     white-space: nowrap;
     content: "mywebsite.web";
     font-size: 0.75rem;
-
-    position: absolute; 
-    top: 100%;           
-    left: 50%;         
-    transform: translate(-50%, 50%); 
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 50%);
 }
-
 .window {
     position: absolute;
-
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    
     width: 50rem;
-
     color: white;
-
     border-radius: 5px;
 }
-
 .popup-window {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-
     width: 25rem;
-
     z-index: 1000 !important;
 }
-
 .content {
     height: 30rem;
-
     background-color: rgba(112, 112, 112, 0.8);
     border: 3px solid rgb(78, 78, 78);
     border-radius: 0;
 }
-
 .popup-window .content {
     height: 8rem;
     background-color: rgb(36, 36, 36);
     border: 3px solid rgb(26, 26, 26);
     text-align: center;
-
 }
 .popup-buttons {
     display: flex;
     gap: 3rem;
     justify-content: center;
-
-
 }
 .confirm-btn, .cancel-btn {
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 10px;
+    cursor: pointer;
 }
 .cancel-btn {
-    background-color: rgb(255, 139, 139)
+    background-color: rgb(255, 139, 139) 
 }
 .confirm-btn {
     background-color: rgb(180, 255, 180);
     font-weight: bold;
 }
 .cancel-btn:hover {
-    background-color: rgb(255, 139, 139, 0.75)
+    background-color: rgb(255, 139, 139, 0.75) 
 }
 .confirm-btn:hover {
     background-color: rgb(180, 255, 180, 0.75);
 }
-
-
-
 .widget {
     margin: 1rem;
 }
-
 .desktop {
     display: flex;
     flex-wrap: wrap;
     gap: 5rem;
     width: 4rem;
     margin: 2rem;
-
     justify-content: center;
 }
-
 .app-icon {
     aspect-ratio: 1;
     width: 3rem;
     font-size: 1.5rem;
-
     color: white;
     background-color: transparent;
     border: 3px solid white;
     border-radius: 5px;
-
     position: relative;
-
     cursor: pointer;
-
 }
-
 #projects {
     border: none;
     font-size: 3rem;
-    transform: translate(-25%, 0%); 
+    transform: translate(-25%, 0%);
     color: pink;
 }
-
 #about::after {
     font-weight: bold;
-
     white-space: nowrap;
     content: "about-me.app";
     font-size: 0.75rem;
-
-    position: absolute; 
-    top: 100%;           
-    left: 50%;         
-    transform: translate(-50%, 50%); 
-    
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 50%);
 }
 #likes::after {
     font-weight: bold;
-
     white-space: nowrap;
     content: "likes.app";
     font-size: 0.75rem;
-
-    position: absolute; 
-    top: 100%;           
-    left: 50%;         
+    position: absolute;
+    top: 100%;
+    left: 50%;
     transform: translate(-50%, 50%);
-
 }
 #specs::after {
     font-weight: bold;
-
     white-space: nowrap;
     content: "pc-specs.app";
     font-size: 0.75rem;
-
-    position: absolute; 
-    top: 100%;           
-    left: 50%;         
-    transform: translate(-50%, 50%); 
-
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 50%);
 }
 #projects::after {
     font-weight: bold;
-
     color: white;
     white-space: nowrap;
     content: "projects";
     font-size: 0.75rem;
-
-    position: absolute; 
-    top: 100%;           
-    left: 50%;         
-    transform: translate(-28%, 50%); 
-
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-28%, 50%);
 }
