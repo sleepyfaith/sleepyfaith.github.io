@@ -51,6 +51,10 @@ class Window {
             e = e || window.event; 
             e.preventDefault();
             
+            if (e.target.closest(".close-btn")) {
+                return
+            } 
+
             dragging = true;
 
             pos3 = e.clientX;
