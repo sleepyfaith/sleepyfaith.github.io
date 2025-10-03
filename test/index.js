@@ -39,20 +39,33 @@ class Window {
         
         const Xmargin = 700
         const Ymargin = 486
+        
 
-        document.getElementsByClassName(`${this.type}-titlebar`)[0].onmousedown = dragMouseDown;
-        function dragMouseDown(e) {
+        const titleBar = document.getElementsByClassName(`${this.type}-titlebar`)[0];
+        const iframe = el.querySelector("iframe");
+        let dragging = false;
+
+        titleBar.addEventListener("pointerdown", dragPointerDown);
+
+        function dragPointerDown(e) {
             e = e || window.event; 
             e.preventDefault();
+            
+            dragging = true;
 
             pos3 = e.clientX;
             pos4 = e.clientY;
-            document.onmouseup = closeDragElement;
-            document.onmousemove = elementDrag;
-        
 
+            try { titleBar.setPointerCapture(e.pointerId); } catch (err) {}
+            titleBar.addEventListener("pointermove", elementDrag);
+            titleBar.addEventListener("pointerup", closeDragElement);
+            titleBar.addEventListener("pointercancel", closeDragElement);
+            
+            if (iframe) iframe.style.pointerEvents = "none";
+    
         }
         function elementDrag(e) {
+            if (!dragging) return;
             e = e || window.event; 
             e.preventDefault();
             
@@ -80,8 +93,10 @@ class Window {
         }
 
         function closeDragElement() {
-            document.onmouseup = null;
-            document.onmousemove = null;
+            dragging = false;
+            try { titleBar.releasePointerCapture(e.pointerId); } catch (err) {}
+
+            if (iframe) iframe.style.pointerEvents = "auto";
           }
     }
 }
@@ -118,7 +133,7 @@ class ProjectsWindow extends Window {
                 <i class="fa-solid fa-circle" id="yellow" style="color: rgb(255, 255, 158);"></i>
             </div>
 
-            <div class="app-icon" id="maze-game" onclick="new MazeGameWindow()">
+            <div class="app-icon" id="maze-game" onclick="event.stopPropagation(); new MazeGameWindow()">
                 <i class="fa-solid fa-signs-post"></i>
             </div>
 
@@ -154,7 +169,6 @@ class SpecsWindow extends Window {
     }
 }
 
-
 class MazeGameWindow extends Window {
     constructor() {
         super("maze", "maze c:", `
@@ -165,7 +179,6 @@ class MazeGameWindow extends Window {
     }
 }
 
-
 var windowOrder = []
 
 function updateWindowOrder(type) {
@@ -174,7 +187,7 @@ function updateWindowOrder(type) {
     if (index !== -1) {
         windowOrder.splice(index, 1)
     }
-    windowOrder.push(type)
+    windowOrder.unshift(type)
 
 
     let zIndex = 100;
@@ -183,9 +196,10 @@ function updateWindowOrder(type) {
         if (el) {
             el.style.zIndex = zIndex;
         }
-        zIndex++;
+        zIndex--;
+        console.log(`${windowType}, ${zIndex}`)
     }
-
+    console.log(windowOrder)
 }
 
 
