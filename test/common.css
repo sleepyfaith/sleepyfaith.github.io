@@ -1,5 +1,8 @@
 body {
-    background-color: #1c1c1c;
+    background: 
+        linear-gradient(rgb(0, 0, 0, 0.25) 0 0),
+        url(imgs/bg.jpg);
+
     font-family: sans-serif;
     overflow: hidden;
     height: 100%;
@@ -20,7 +23,7 @@ a:hover {
 .panel {
     display: flex;
     justify-content: left;
-    background-color: rgb(56, 34, 59);
+    background-color: rgb(56, 34, 59, 0.5);
     color: white;
     position: sticky;
     width: 100%;

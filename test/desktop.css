@@ -1,3 +1,8 @@
+
+body {
+    background-size: 20%;
+}
+
 .panel {
     height: 2.5rem;
     .widget {
