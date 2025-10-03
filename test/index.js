@@ -21,10 +21,17 @@ class Window {
         
         const win = document.createElement("div");
         win.className = `${this.type}-window window`;
-        win.innerHTML = `
-        <div class="${this.type}-titlebar titlebar"><p>${this.title}</p> <button class='close-btn'>x</button></div>
-        <div class="content">${this.content}</div>
-        `;
+
+
+        win.innerHTML = `<div class="${this.type}-titlebar titlebar"><p>${this.title}</p> <button class='close-btn'>x</button></div>`
+
+        if (this.content instanceof HTMLElement) {
+            win.appendChild(this.content);
+        } 
+        else {
+            win.innerHTML = win.innerHTML + `<div class="content">${this.content}</div>`
+        }
+
         win.querySelector(".close-btn").addEventListener("click", () => win.remove());
 
         win.onclick = () => updateWindowOrder(this.type);
@@ -33,6 +40,9 @@ class Window {
         return win
     }
     makeDraggable() {
+
+        if (this.type == "popup") return;
+
         var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
         const el = this.el
         const winType = this.type
@@ -86,7 +96,6 @@ class Window {
             const maxX = window.innerWidth - el.offsetWidth + Xmargin
             const maxY = window.innerHeight - el.offsetHeight + Ymargin
             
-            console.log(window.innerWidth, window.innerHeight)
 
             newLeft = Math.max(-Xmargin, Math.min(newLeft, maxX));
             newTop  = Math.max(40, Math.min(newTop, maxY));
@@ -103,7 +112,49 @@ class Window {
             if (iframe) iframe.style.pointerEvents = "auto";
           }
     }
+    close() {
+        this.el.remove();
+    }
 }
+
+class PopupWindow extends Window {
+    constructor(message, onConfirm, onCancel) {
+        const content = document.createElement("div");
+        content.classList.add("content");
+
+        const msg = document.createElement("p");
+        msg.textContent = message;
+
+        const buttons = document.createElement("div");
+        buttons.classList.add("popup-buttons");
+
+        const confirmBtn = document.createElement("button");
+        confirmBtn.textContent = "yes";
+        confirmBtn.onclick = () => {
+            this.close();
+            if (onConfirm) onConfirm()
+        };
+        confirmBtn.classList.add("confirm-btn")
+
+        const cancelBtn = document.createElement("button");
+        cancelBtn.textContent = "no";
+        cancelBtn.onclick = () => {
+            this.close();
+            if (onCancel) onCancel()
+        };
+        cancelBtn.classList.add("cancel-btn")
+
+        buttons.appendChild(confirmBtn);
+        buttons.appendChild(cancelBtn);
+        
+        content.appendChild(msg);
+        content.appendChild(buttons)
+
+        super("popup", "system prompt", content)
+
+    }
+}
+
 
 class AboutWindow extends Window {
     constructor() {
@@ -132,7 +183,7 @@ class ProjectsWindow extends Window {
     constructor() {
         super("projects", "projects", `
             
-            <div class="app-icon" id="connect4">
+            <div class="app-icon" id="connect4" onclick="event.stopPropagation(); new Connect4Window()">
                 <i class="fa-solid fa-circle" id="red" style="color: rgb(255, 93, 93);"></i>
                 <i class="fa-solid fa-circle" id="yellow" style="color: rgb(255, 255, 158);"></i>
             </div>
@@ -141,11 +192,11 @@ class ProjectsWindow extends Window {
                 <i class="fa-solid fa-signs-post"></i>
             </div>
 
-            <div class="app-icon" id="faithbot">
+            <div class="app-icon" id="faithbot" onclick="event.stopPropagation(); new FaithBotPopup()">
                 <i class="fa-solid fa-robot"></i>
             </div>
 
-            <div class="app-icon" id="mazegen">
+            <div class="app-icon" id="mazegen" onclick="event.stopPropagation(); new MazeGenPopup()">
                 <i class="fa-solid fa-compass"></i>
             </div>
 
@@ -182,6 +233,32 @@ class MazeGameWindow extends Window {
             `)
     }
 }
+class Connect4Window extends Window {
+    constructor() {
+        super("connect4", "connect4 :o", `
+            
+            <iframe src="../connect4" width="143%" height="143%" style="border:none;transform:scale(0.7);transform-origin: 0 0;"></iframe>
+
+            `)
+    }
+}
+
+class FaithBotPopup extends PopupWindow {
+    constructor() {
+        super("this file is hosted externally. open in browser?", 
+            () => window.open("https://github.com/sleepyfaith/FaithBot"),
+            () => console.log("cancelled")
+        )
+    }
+}
+class MazeGenPopup extends PopupWindow {
+    constructor() {
+        super("this file is hosted externally. open in browser?", 
+            () => window.open("https://github.com/sleepyfaith/hunt-and-kill"),
+            () => console.log("cancelled")
+        )
+    }
+}
 
 var windowOrder = []
 
@@ -201,9 +278,7 @@ function updateWindowOrder(type) {
             el.style.zIndex = zIndex;
         }
         zIndex--;
-        console.log(`${windowType}, ${zIndex}`)
     }
-    console.log(windowOrder)
 }
 
 

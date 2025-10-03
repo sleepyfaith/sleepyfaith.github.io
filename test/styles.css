@@ -133,7 +133,7 @@ a:hover {
     font-weight: bold;
 
     white-space: nowrap;
-    content: "connect4.web";
+    content: "connect4.app";
     font-size: 0.75rem;
 
     position: absolute; 
@@ -146,7 +146,7 @@ a:hover {
     font-weight: bold;
 
     white-space: nowrap;
-    content: "maze.web";
+    content: "maze.app";
     font-size: 0.75rem;
 
     position: absolute; 
@@ -194,8 +194,9 @@ a:hover {
 .window {
     position: absolute;
 
-    left: 25rem;
-    top: 5rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     
     width: 50rem;
 
@@ -203,6 +204,18 @@ a:hover {
 
     border-radius: 5px;
 }
+
+.popup-window {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 25rem;
+
+    z-index: 1000 !important;
+}
+
 .content {
     height: 30rem;
 
@@ -210,6 +223,42 @@ a:hover {
     border: 3px solid rgb(78, 78, 78);
     border-radius: 0;
 }
+
+.popup-window .content {
+    height: 8rem;
+    background-color: rgb(36, 36, 36);
+    border: 3px solid rgb(26, 26, 26);
+    text-align: center;
+
+}
+.popup-buttons {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+
+
+}
+.confirm-btn, .cancel-btn {
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+}
+.cancel-btn {
+    background-color: rgb(255, 139, 139)
+}
+.confirm-btn {
+    background-color: rgb(180, 255, 180);
+    font-weight: bold;
+}
+.cancel-btn:hover {
+    background-color: rgb(255, 139, 139, 0.75)
+}
+.confirm-btn:hover {
+    background-color: rgb(180, 255, 180, 0.75);
+}
+
+
+
 .widget {
     margin: 1rem;
 }
@@ -239,9 +288,6 @@ a:hover {
     cursor: pointer;
 
 }
-
-
-
 
 #projects {
     border: none;
