@@ -17,13 +17,13 @@ body {
     justify-content: center;
 }
 
-.projects-window .content .app-icon {
+.projects-window .content .app-icon, .socials-window .content .app-icon {
     width: 5rem;
     height: 5rem;
     font-size: 2rem;
 }
 
-#projects {
+#projects, #socials {
     transform: translate(-25%, 0%);
 }
 
@@ -59,6 +59,25 @@ body {
 .app-icon#projects::after {
     content: "projects";
 }
+.app-icon#socials::after {
+    content: "socials"
+}
+#github::after {
+    content: "github.web";  
+}
+#youtube::after {
+    content: "youtube.web";  
+}
+#instagram::after {
+    content: "instagram.web";  
+}
+#pronouns-page::after {
+    content: "prounouns-page.web";  
+}
+#twitter::after {
+    content: "twitter.web";  
+}
+
 .window {
     width: 50rem;
     color: white;

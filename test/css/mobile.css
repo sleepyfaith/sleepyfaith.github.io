@@ -17,7 +17,7 @@ body {
     justify-content: left;
 }
 
-#projects {
+#projects, #socials {
     transform: translate(-25%, -15%);
 }
 
@@ -58,7 +58,7 @@ body {
     display: inline;
 }
 
-.projects-window .content .app-icon {
+.projects-window .content .app-icon, .socials-window .content .app-icon {
     margin: 2rem;
 }
 
@@ -116,4 +116,22 @@ body {
 }
 .app-icon#projects::after {
     content: "projects";
+}
+.app-icon#socials::after {
+    content: "socials"
+}
+#github::after {
+    content: "github";  
+}
+#youtube::after {
+    content: "youtube";  
+}
+#instagram::after {
+    content: "instagram";  
+}
+#pronouns-page::after {
+    content: "prounouns.page";  
+}
+#twitter::after {
+    content: "twitter";  
 }
