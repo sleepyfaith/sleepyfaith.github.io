@@ -69,7 +69,6 @@ export class Window {
 
     addResizers() {
 
-        if (this.type == "popup" || this.isMobile) return;
 
         const directions = ["n", "e", "s", "w", "ne", "nw", "se", "sw"];
         directions.forEach(dir => {
@@ -97,7 +96,7 @@ export class Window {
             startLeft = rect.left
             startTop = rect.top
 
-            document.addEventListener("pointermove", resizePointerDown)
+            document.addEventListener("pointermove", elementResize)
             document.addEventListener("pointerup", stopResizeElement)
         }
         function elementResize(e) { 

@@ -9,8 +9,6 @@ export function updateClock() {
 export function toggleTheme() {
     
     var darkMode = localStorage.getItem("mainDarkMode");
-    console.log(darkMode)
-
     if (darkMode == "true") {
         document.documentElement.classList.remove("dark");
         document.documentElement.classList.add("light");
@@ -26,9 +24,12 @@ export function toggleTheme() {
 export function loadTheme() {
 
     var darkMode = localStorage.getItem("mainDarkMode");
-    if (darkMode == "false") {
+
+
+    if (darkMode == null || darkMode == false) {
         document.documentElement.classList.add("light");
-    } 
+
+    }
     else {
         document.documentElement.classList.add("dark");
     }
