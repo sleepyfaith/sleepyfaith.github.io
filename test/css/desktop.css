@@ -2,7 +2,10 @@
 body {
     background-size: 20%;
 }
-
+* {
+    scrollbar-width: none;
+    transition: background-color 400ms, color 400ms, border-color 400ms;
+}
 .panel {
     height: 2.5rem;
     .widget {
@@ -78,21 +81,40 @@ body {
     content: "twitter.web";  
 }
 
+.windows { 
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
 .window {
     width: 50rem;
-    color: white;
-    border-radius: 5px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    height: 30rem;
+    position: absolute;
+    left: calc(50% + 30rem);
+    top: calc(50% + 15rem);
+    transform-origin: center;
+    transform: scale(0);
+    transition: transform 300ms;
+    will-change: transform;
+
+}
+.window.open {
+    transform: scale(1);
 }
 .popup-window {
     width: 25rem;
 }
 
+
+
 .content {
-    height: 30rem;
-    background-color: rgba(112, 112, 112, 0.8);
+    height: 100%;
+    overflow-y: auto;
+}
+
+.content * {
+    margin: 1;    
 }
 .close-btn {
     left: 100%;
@@ -102,6 +124,51 @@ body {
 }
 
 
+.resizer {
+    position: absolute;
+    z-index: 10000;
+}
+.resizer.nw,
+.resizer.ne,
+.resizer.sw,
+.resizer.se {
+    width: 12px;
+    height: 12px;
+
+}
+.resizer.n,
+.resizer.s {
+    height: 8px;
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+
+.resizer.s,
+.resizer.se,
+.resizer.sw {
+    top: calc(100% + 2rem)
+}
+
+.resizer.e,
+.resizer.w {
+    width: 8px;
+    height: calc(100% + 2rem);
+    top: 0;
+    bottom: 0;
+}
+.resizer.n   { top: -4px; cursor: n-resize; }
+.resizer.s   { bottom: -4px; cursor: s-resize; }
+.resizer.e   { right: -4px; cursor: e-resize; }
+.resizer.w   { left: -4px; cursor: w-resize; }
+
+.resizer.nw  { top: -6px; left: -6px; cursor: nw-resize; }
+.resizer.ne  { top: -6px; right: -6px; cursor: ne-resize; }
+.resizer.sw  { bottom: -6px; left: -6px; cursor: sw-resize; }
+.resizer.se  { bottom: -6px; right: -6px; cursor: se-resize; }
 
 
 
+.settings-window {
+    width: 300px;
+}

@@ -32,7 +32,7 @@ body {
     width: 100vw;
     height: 3rem;
     
-    background-color: rgb(56, 34, 59);
+    background-color: rgb(var(--bg2));
     content:" "
 }
 .popup-window { 
@@ -60,11 +60,13 @@ body {
 
 .projects-window .content .app-icon, .socials-window .content .app-icon {
     margin: 2rem;
+
 }
 
 .content {
     height: calc(100vh - 10rem);
-    background-color: rgba(112, 112, 112);
+    backdrop-filter: blur(3px); 
+    -webkit-backdrop-filter: blur(3px); /* for safari */
 
     p {
         width: 35%;
@@ -81,9 +83,12 @@ body {
     width: 2.25rem;
 
     background-color: black;
-
     border: none;
     border-radius: 100vh;
+
+    i {
+        color: white;
+    }
 }
 
 .app-icon#connect4 {

@@ -1,4 +1,3 @@
-export const isMobile = !window.matchMedia("(min-width: 768px)").matches;
 export const windowOrder = []
 
 export function updateWindowOrder(type) {
@@ -23,6 +22,8 @@ export function updateWindowOrder(type) {
 export class Window {
     constructor(type, title, content) {
         this.type = type
+
+        this.isMobile = !window.matchMedia("(min-width: 768px)").matches;
         
         this.title = title;
         this.content = content;
@@ -31,6 +32,11 @@ export class Window {
         document.getElementsByClassName("windows")[0].appendChild(this.el)
         updateWindowOrder(this.type)
         this.makeDraggable();
+        this.addResizers();
+
+        setTimeout(() => {
+            this.el.classList.add("open")
+        }, 10);
     }
 
     createWindow() {
@@ -42,7 +48,7 @@ export class Window {
 
 
         var closebtnStr = "x"
-        if (isMobile) closebtnStr = `<i class="fa-solid fa-house"></i>`
+        if (this.isMobile) closebtnStr = `<i class="fa-solid fa-house"></i>`
 
         win.innerHTML = `<div class="${this.type}-titlebar titlebar"><p>${this.title}</p> <button class='close-btn'>${closebtnStr}</button></div>`
 
@@ -53,18 +59,88 @@ export class Window {
             win.innerHTML = win.innerHTML + `<div class="content">${this.content}</div>`
         }
 
-        win.querySelector(".close-btn").addEventListener("click", () => win.remove());
+        win.querySelector(".close-btn").addEventListener("click", () => this.close());
 
         win.onclick = () => updateWindowOrder(this.type);
 
 
         return win
     }
+
+    addResizers() {
+
+        if (this.type == "popup" || this.isMobile) return;
+
+        const directions = ["n", "e", "s", "w", "ne", "nw", "se", "sw"];
+        directions.forEach(dir => {
+            const r = document.createElement("div");
+            r.className = `resizer ${dir}`
+            this.el.appendChild(r)
+        });
+
+        const el = this.el
+
+        let startX, startY, startWidth, startHeight, startLeft, startTop, activeDir;
+
+        function resizePointerDown(e) {
+            const resizer = e.target
+            if (!resizer.classList.contains("resizer")) return;
+            e.preventDefault();
+
+            activeDir = [...resizer.classList].find(c => directions.includes(c))
+            startX = e.clientX
+            startY = e.clientY
+
+            const rect = el.getBoundingClientRect();
+            startWidth = rect.width
+            startHeight = rect.height
+            startLeft = rect.left
+            startTop = rect.top
+
+            document.addEventListener("pointermove", resizePointerDown)
+            document.addEventListener("pointerup", stopResizeElement)
+        }
+        function elementResize(e) { 
+            e.preventDefault();
+            const dx = e.clientX - startX
+            const dy = e.clientY - startY
+            
+            let newWidth = startWidth;
+            let newHeight = startHeight;
+            let newLeft = startLeft;
+            let newTop = startTop;
+
+            if (activeDir.includes("e")) newWidth = startWidth + dx;
+            if (activeDir.includes("s")) newHeight = startHeight + dy;
+            if (activeDir.includes("w")) {
+                newWidth = startWidth - dx;
+                newLeft = startLeft + dx;
+            }
+            if (activeDir.includes("n")) {
+                newHeight = startHeight - dy;
+                newTop = startTop + dy;
+            }
+
+            newWidth = Math.max(300, newWidth)
+            newHeight = Math.max(300, newHeight)
+            el.style.width = newWidth + "px"
+            el.style.height = newHeight + "px"
+            el.style.left = newLeft + "px";
+            el.style.top = newTop + "px";
+
+        }
+        const stopResizeElement = () => {
+            document.removeEventListener("pointermove", elementResize);
+            document.removeEventListener("pointerup", stopResizeElement);
+        };
+
+        this.el.addEventListener("pointerdown", resizePointerDown);
+
+    }
+
     makeDraggable() {
 
-        if (this.type == "popup") return;
-
-        if (isMobile) return;
+        if (this.type == "popup" || this.isMobile) return;
     
 
         var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -134,9 +210,16 @@ export class Window {
             try { titleBar.releasePointerCapture(e.pointerId); } catch (err) {}
 
             if (iframe) iframe.style.pointerEvents = "auto";
-          }
+        }
     }
     close() {
-        this.el.remove();
+        if (this.isMobile) {
+            this.el.remove()
+            return
+        }
+        this.el.classList.remove("open")
+        this.el.addEventListener("transitionend", () => {
+            this.el.remove();
+        })
     }
 }

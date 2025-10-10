@@ -1,6 +1,6 @@
 import { Window } from './windowBase.js';
 import { PopupWindow } from './popupWindow.js';
-
+import { toggleTheme } from './util.js';
 
 export class AboutWindow extends Window {
     constructor() {
@@ -78,10 +78,12 @@ export class ProjectsWindow extends Window {
 }
 export class SocialsWindow extends Window {
     constructor() {
+        let isDark = localStorage.getItem("mainDarkMode") == "true" ? "" : "-dark"
+
         super("socials", "socials", `
 
             <div class="app-icon" id="github">
-                <img class="icon-img" src="assets/github.svg"></img>
+                <img class="icon-img" src="assets/github${isDark}.svg"></img>
             </div>
 
             <div class="app-icon" id="youtube">
@@ -100,7 +102,8 @@ export class SocialsWindow extends Window {
                 <img class="icon-img" src="assets/twitter.svg"></img>
             </div>
             `)
-            const el = this.el
+
+            const el = this.el;
             el.querySelector("#github").addEventListener("click", () => new PopupWindow("open this link in a new tab?", "https://github.com/sleepyfaith"));
             el.querySelector("#youtube").addEventListener("click", () => new PopupWindow("open this link in a new tab?", "https://youtube.com/@sleepyyfaith"));
             el.querySelector("#instagram").addEventListener("click", () => new PopupWindow("open this link in a new tab?", "https://instagram.com/sleepyfaith_"));
@@ -130,3 +133,21 @@ export class MazeGameWindow extends Window {
     }
 }
 
+export class SettingsWindow extends Window {
+    constructor() {
+        let checked = localStorage.getItem("mainDarkMode") == "true" ? "checked" : ""
+        super("settings", "settings :3", `
+            
+            <div class="switch-container">
+                <span class="switch-label">dark mode</span>
+                <label class="switch" for="theme-switch">
+                    <input id="theme-switch" type="checkbox" ${checked}>
+                    <span class="slider round"></span>
+                </label>
+            </div>  
+
+            `)
+        document.getElementById("theme-switch").addEventListener("change", toggleTheme)
+
+    }
+}

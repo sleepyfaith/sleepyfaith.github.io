@@ -1,4 +1,5 @@
-import { AboutWindow, LikesWindow, ProjectsWindow, SpecsWindow, SocialsWindow, Connect4Window } from './windows.js';
+import { AboutWindow, LikesWindow, ProjectsWindow, SpecsWindow, SocialsWindow, SettingsWindow } from './windows.js';
+import { updateClock, loadTheme } from './util.js';
 
 document.getElementById("about").addEventListener("click", () => {
     new AboutWindow()
@@ -15,19 +16,18 @@ document.getElementById("specs").addEventListener("click", () => {
 document.getElementById("socials").addEventListener("click", () => {
     new SocialsWindow()
 }) 
+document.getElementById("socials").addEventListener("click", () => {
+    new SocialsWindow()
+}) 
+document.getElementById("settings").addEventListener("click", () => {
+    new SettingsWindow()
+}) 
 
 
 
-function updateClock() {
-    const date = new Date();
-    const hours = String(date.getHours()).padStart(2, '0');
-    const minutes = String(date.getMinutes()).padStart(2, '0');
-    const seconds = String(date.getSeconds()).padStart(2, '0');
-
-    document.getElementsByClassName("clock")[0].innerHTML = `${hours}:${minutes}:${seconds}`;
-}
-
+loadTheme()
 updateClock()
+
 setInterval(() => {
     updateClock()
 }, 1000);
