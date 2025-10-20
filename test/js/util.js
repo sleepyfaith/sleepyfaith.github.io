@@ -29,6 +29,7 @@ export function loadTheme() {
 
     if (darkMode == null) {
         localStorage.setItem("mainDarkMode", "false");
+        document.documentElement.classList.add("light");
     }
     else if (darkMode == "false") {
         document.documentElement.classList.add("light");
