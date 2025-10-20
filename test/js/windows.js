@@ -66,14 +66,38 @@ export class ProjectsWindow extends Window {
                 <i class="fa-solid fa-code"></i>
             </div>
 
+            <div class="app-icon" id="clock">
+                <i class="fa-solid fa-clock"></i>
+            </div>
+
+
             `)
         
-            const el = this.el;
-            el.querySelector("#connect4").addEventListener("click", () => new Connect4Window());
-            el.querySelector("#maze-game").addEventListener("click", () => new MazeGameWindow());
-            el.querySelector("#faithbot").addEventListener("click", () => new PopupWindow("this file is hosted externally. open in browser?", "https://github.com/sleepyfaith/FaithBot"));
-            el.querySelector("#mazegen").addEventListener("click", () => new PopupWindow("this file is hosted externally. open in browser?", "https://github.com/sleepyfaith/hunt-and-kill"));
+        const el = this.el;
+        el.querySelector("#connect4").addEventListener("click", (e) => {
+            e.stopPropagation();
+            new Connect4Window();
+        });
 
+        el.querySelector("#maze-game").addEventListener("click", (e) => {
+            e.stopPropagation();
+            new MazeGameWindow();
+        });
+
+        el.querySelector("#faithbot").addEventListener("click", (e) => {
+            e.stopPropagation();
+            new PopupWindow("this file is hosted externally. open in browser?", "https://github.com/sleepyfaith/FaithBot");
+        });
+
+        el.querySelector("#mazegen").addEventListener("click", (e) => {
+            e.stopPropagation();
+            new PopupWindow("this file is hosted externally. open in browser?", "https://github.com/sleepyfaith/hunt-and-kill");
+        });
+
+        el.querySelector("#clock").addEventListener("click", (e) => {
+            e.stopPropagation();
+            new ClockWindow();
+        });
     }
 }
 export class SocialsWindow extends Window {
@@ -128,6 +152,16 @@ export class MazeGameWindow extends Window {
         super("maze", "maze c:", `
             
             <iframe src="../maze" style="width: 100%; height: 100%; zoom: 0.7; border: none;"></iframe>
+
+            `)
+    }
+}
+
+export class ClockWindow extends Window {
+    constructor() {
+        super("clock", "clock?!", `
+            
+            <iframe src="../clocks-clock" style="width: 100%; height: 100%; zoom: 0.7; border: none;"></iframe>
 
             `)
     }

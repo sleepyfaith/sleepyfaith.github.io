@@ -98,6 +98,10 @@ body {
     content: "connect4";
 }
 
+.app-icon#clock::after {
+    content: "clock";
+}
+
 .app-icon#maze-game::after {
     content: "maze";
 }

@@ -8,7 +8,7 @@ export function updateWindowOrder(type) {
     }
     windowOrder.unshift(type)
 
-
+    console.log(windowOrder)
     let zIndex = 100;
     for (const windowType of windowOrder) {
         const el = document.getElementsByClassName(`${windowType}-window`)[0];

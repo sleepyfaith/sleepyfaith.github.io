@@ -13,6 +13,10 @@ body {
     };
 }
 
+#settings {
+    font-size: 1.5rem;
+}
+
 .desktop {
     gap: 5rem;
     width: 4rem;
@@ -38,6 +42,11 @@ body {
     top: 5%;
     transform: translate(-50%, 0);
 }
+
+.app-icon#clock::after {
+    content: "clock.app";
+}
+
 .app-icon#maze-game::after {
     content: "maze.app";
 }

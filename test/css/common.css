@@ -65,6 +65,9 @@ a:hover {
     align-items: center;
 }
 
+#settings {
+    cursor: pointer;
+}
 
 .app-icon#projects::after, .app-icon#socials::after {
     color: white;

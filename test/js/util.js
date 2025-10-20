@@ -25,10 +25,13 @@ export function loadTheme() {
 
     var darkMode = localStorage.getItem("mainDarkMode");
 
+    console.log(darkMode)
 
-    if (darkMode == null || darkMode == false) {
+    if (darkMode == null) {
+        localStorage.setItem("mainDarkMode", "false");
+    }
+    else if (darkMode == "false") {
         document.documentElement.classList.add("light");
-
     }
     else {
         document.documentElement.classList.add("dark");
