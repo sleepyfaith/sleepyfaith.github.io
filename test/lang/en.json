@@ -1,0 +1,59 @@
+{
+    "about": {
+        "title": "about me! <3",
+        "age": "19 year old british trans girl",
+        "relationship": "5 amazing years with her",
+        "kotlin": "kotlin enjoyer",
+        "hatepeople": "terrified of people",
+        "eepy": "constantly eepy",
+        "frontend": "fascinated by cool front-end" 
+    },
+    "likes": {
+        "title": "things i like :3",
+        "animals": "cats and foxes",
+        "seedfind": "minecraft seedfinding",
+        "speedrun": "superliminal speedrunning",
+        "maze": "mazes and maze generators",
+        "rlai": "reinforcement learning AI"
+    },
+
+    "specs":  {
+        "title": "my pc!!"
+    },
+
+    "popup": {
+        "title": "system prompt",
+        "link": "open this link in a new tab?",
+        "file": "this file is hosted externally. open in browser?",
+        "yes": "yes",
+        "no": "no"
+    },
+
+    "settings": {
+        "title": "settings :3",
+        "theme": "dark mode",
+        "language": "language", 
+        "languageName": "english"
+    },
+
+    "apps": {
+        "likes": "likes", 
+        "socials": "socials",
+        "specs": "pc-specs", 
+        "projects": "projects",
+        "about": "about-me",
+
+        "connect4": "connect4",
+        "maze": "maze",
+        "mazegen": "mazegenerator",
+        "website": "mywebsite",
+        "clock": "clock",
+        "faithbot": "faithbot"
+
+    },
+    "misc": {
+        "app": "app", 
+        "web": "web",
+        "py": "py"
+    }
+}

@@ -1,0 +1,57 @@
+{
+    "about": {
+        "title": "acerca de mi! <3",
+        "age": "chica trans britanica de 19 años",
+        "relationship": "5 años hermosos con ella",
+        "kotlin": "disfruto de kotlin",
+        "hatepeople": "aterrorizada de la gente",
+        "eepy": "constantemente con ganas de dormir",
+        "frontend": "fanatizada por front-end guay" 
+    },
+    "likes": {
+        "title": "cositas que me gustan :3",
+        "animals": "gatos y zorros",
+        "seedfind": "seedfinding en minecraft",
+        "speedrun": "speedrunning de superliminal",
+        "maze": "laberintos y generadores de laberintos",
+        "rlai": "IA por reinforcement learning"
+    },
+    "settings": {
+        "title": "configuracion :3",
+        "theme": "modo oscuro",
+        "language": "idioma",
+        "languageName": "español" 
+    },
+    "popup": {
+        "title": "aviso del sistema",
+        "link": "abrir link en nueva pestaña?",
+        "file": "este archivo esta hosteado externamente. abrir en el navegador?",
+        "yes": "si",
+        "no": "no"
+    },
+    "specs":  {
+        "title": "mi compu!!"
+    },
+
+    "apps": {
+        "likes": "gustos", 
+        "socials": "sociales", 
+        "specs": "specs-de-mi-pc", 
+
+        "projects": "proyectos",
+        "about": "sobre-mi",
+
+        "connect4": "4-en-linea",
+        "maze": "laberinto",
+        "mazegen": "generador-de-laberintos",
+        "website": "mi-sitio-web",
+        "clock": "reloj",
+        "faithbot": "faithbot"
+
+    },
+    "misc": {
+        "app": "app", 
+        "web": "web",
+        "py": "py"
+    }
+}

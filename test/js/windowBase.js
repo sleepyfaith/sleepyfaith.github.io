@@ -8,7 +8,6 @@ export function updateWindowOrder(type) {
     }
     windowOrder.unshift(type)
 
-    console.log(windowOrder)
     let zIndex = 100;
     for (const windowType of windowOrder) {
         const el = document.getElementsByClassName(`${windowType}-window`)[0];
@@ -50,7 +49,7 @@ export class Window {
         var closebtnStr = "x"
         if (this.isMobile) closebtnStr = `<i class="fa-solid fa-house"></i>`
 
-        win.innerHTML = `<div class="${this.type}-titlebar titlebar"><p>${this.title}</p> <button class='close-btn'>${closebtnStr}</button></div>`
+        win.innerHTML = `<div class="${this.type}-titlebar titlebar"><p data-i18n="${this.type}.title">${this.title}</p> <button class='close-btn'>${closebtnStr}</button></div>`
 
         if (this.content instanceof HTMLElement) {
             win.appendChild(this.content);

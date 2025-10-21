@@ -38,3 +38,81 @@ export function loadTheme() {
         document.documentElement.classList.add("dark");
     }
 }
+
+
+const locales = {};
+
+export async function preloadLocales() {
+    const langs = ["en", "nl", "es"];
+    for (const lang of langs) {
+        const res = await fetch(`lang/${lang}.json`);
+        locales[lang] = await res.json();
+    }
+}
+
+export function getLocale() {
+    return locales[document.documentElement.lang.toLowerCase()]
+}
+
+export function getFromLocale(langCode, key) {
+    const locale = locales[langCode.toLowerCase()];
+    if (!locale) return null;
+
+    const keyPath = key.split(".");
+    let value = locale;
+
+    for (const k of keyPath) {
+        if (value[k] !== undefined) {
+            value = value[k];
+        } else {
+            return null;
+        }
+    }
+    return value;
+}
+
+
+export function loadLang(langCode) {
+    const locale = locales[langCode.toLowerCase()];
+    if (!locale) {
+        console.warn(`locale not found: ${langCode}`);
+        return;
+    }
+
+    document.documentElement.lang = langCode;
+
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const keyPath = el.dataset.i18n.split("."); // e.g., "about.title"
+        let value = locale;
+
+        for (const key of keyPath) {
+            if (value[key] !== undefined) {
+                value = value[key];
+            } else {
+                value = null;
+                break;
+            }
+        }
+
+        if (value !== null) {
+            if (keyPath[0] == "about") {
+                value = `<i class="fa-regular fa-heart" style="color:lightskyblue"></i> ` + value
+            }
+            if (keyPath[0] == "likes") {
+                value = `<i class="fa-regular fa-heart" style="color:pink"></i> ` + value
+            }
+            if (el.dataset.app == "py") {
+                value = value + "." + locale.misc.py
+            }
+            if (el.dataset.app == "app") {
+                value = value + "." + locale.misc.app
+            }
+            if (el.dataset.app == "web") {
+                value = value + "." + locale.misc.web
+            }
+            el.innerHTML = value;
+        } else {
+            console.warn(`missing translation for key: ${el.dataset.i18n}`);
+        }
+    });
+}

@@ -1,33 +1,62 @@
 import { AboutWindow, LikesWindow, ProjectsWindow, SpecsWindow, SocialsWindow, SettingsWindow } from './windows.js';
-import { updateClock, loadTheme } from './util.js';
+import { updateClock, loadTheme, loadLang, preloadLocales } from './util.js';
 
 document.getElementById("about").addEventListener("click", () => {
-    new AboutWindow()
+
+    let currentLang = document.documentElement.lang.toLowerCase()
+    fetch(`lang/${currentLang}.json`)
+    .then(res => res.json())
+    .then(locale => {
+        new AboutWindow(locale);
+    });
 }) 
 document.getElementById("likes").addEventListener("click", () => {
-    new LikesWindow()
+    let currentLang = document.documentElement.lang.toLowerCase()
+    fetch(`lang/${currentLang}.json`)
+    .then(res => res.json())
+    .then(locale => {
+        new LikesWindow(locale);
+    });
 }) 
 document.getElementById("projects").addEventListener("click", () => {
-    new ProjectsWindow()
+    let currentLang = document.documentElement.lang.toLowerCase()
+    fetch(`lang/${currentLang}.json`)
+    .then(res => res.json())
+    .then(locale => {
+        new ProjectsWindow(locale);
+    });
 }) 
 document.getElementById("specs").addEventListener("click", () => {
-    new SpecsWindow()
-}) 
-document.getElementById("socials").addEventListener("click", () => {
-    new SocialsWindow()
+    let currentLang = document.documentElement.lang.toLowerCase()
+    fetch(`lang/${currentLang}.json`)
+    .then(res => res.json())
+    .then(locale => {
+        new SpecsWindow(locale);
+    });
 }) 
 document.getElementById("socials").addEventListener("click", () => {
     new SocialsWindow()
 }) 
 document.getElementById("settings").addEventListener("click", () => {
-    new SettingsWindow()
+    let currentLang = document.documentElement.lang.toLowerCase()
+    fetch(`lang/${currentLang}.json`)
+    .then(res => res.json())
+    .then(locale => {
+        new SettingsWindow(locale);
+    });
 }) 
 
 
 
+preloadLocales()
 loadTheme()
 updateClock()
+
+setTimeout(() => {
+    loadLang("en")
+}, 100)
 
 setInterval(() => {
     updateClock()
 }, 1000);
+

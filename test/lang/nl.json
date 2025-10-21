@@ -1,0 +1,56 @@
+{
+    "about": {
+        "title": "over mij! <3",
+        "age": "19 jaar oud brits trans meisje",
+        "relationship": "5 geweldige jaren met haar",
+        "kotlin": "kotlin liefhebber",
+        "hatepeople": "doodsbang voor mensen",
+        "eepy": "altijd slaperig",
+        "frontend": "gefascineerd door coole front-end"
+    },
+    "likes": {
+        "title": "dingen die ik leuk vind :3",
+        "animals": "poezen en vossen",
+        "seedfind": "minecraft seedfinden",
+        "speedrun": "superliminal speedrunnen",
+        "maze": "doolhoven and doolhofgenerators",
+        "rl-ai": "reinforcement leren AI"
+    },
+    "popup": {
+        "title": "systeemmelding",
+        "link": "deze link openen in een nieuw tabblad?",
+        "file": "dit bestand wordt extern gehost. openen in browser?",
+        "yes": "ja",
+        "no": "nee"
+        
+    },
+    "settings": {
+        "title": "instellingen :3",
+        "theme": "donkere modus",
+        "language": "taal", 
+        "languageName": "nederlands"
+    },
+    "specs":  {
+        "title": "mijn pc!!"
+    },
+    "apps": {
+        "likes": "vind-ik-leuks", 
+        "socials": "socials", 
+        "specs": "pc-specificaties", 
+
+        "projects": "projecten",
+        "about": "over-mij",
+
+        "connect4": "4-op-een-rij",
+        "maze": "doolhof",
+        "mazegen": "doolhofgenerator",
+        "website": "mijnwebsite",
+        "clock": "klok",
+        "faithbot": "faithbot"
+    },
+    "misc": {
+        "app": "app", 
+        "web": "web",
+        "py": "py"
+    }
+}

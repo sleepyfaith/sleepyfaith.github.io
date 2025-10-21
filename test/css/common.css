@@ -31,7 +31,6 @@ html.dark {
     --bg-alpha: 0.25
 }
 
-
 body {
     background: 
         linear-gradient(rgb(0, 0, 0, var(--bg-alpha)) 0 0),
@@ -69,16 +68,12 @@ a:hover {
     cursor: pointer;
 }
 
-.app-icon#projects::after, .app-icon#socials::after {
-    color: white;
-    top: 100%;
-    left: 50%;
-    transform: translate(-28%, 50%);
-}
+
 
 .window {
     position: absolute;
     color: rgb(var(--text1));
+    backdrop-filter: blur(4px);
 }
 
 .titlebar {
@@ -137,13 +132,15 @@ a:hover {
 .projects-window .content, .socials-window .content {
     text-align: center;
     justify-content: flex-start;
-    align-items: stretch;
+    align-items: center;
     align-content: flex-start;
 
+    gap: 0rem 3rem;
     .app-icon {
-        margin: 0.5rem;  
+        margin: 1rem;
+        margin-left: 2%;
         color: rgb(var(--text2));
-        border-color: rgb(var(--text2));     
+        border-color: rgb(var(--text2));
     };
     .app-icon i {
         position: absolute;
@@ -163,7 +160,7 @@ a:hover {
 }
 .popup-window .content {
     gap: 2rem;
-    height: 8rem;
+    height: 10rem;
     background-color: rgb(var(--bg2));
     border: 3px solid rgb(var(--bg3));
 }
@@ -215,7 +212,9 @@ a:hover {
     font-size: 3rem;
     color: pink;
 }
-.app-icon::after {
+
+.app-icon span {
+    text-align: center;
     font-weight: bold;
     white-space: nowrap;
     font-size: 0.75rem;
@@ -223,6 +222,12 @@ a:hover {
     top: 100%;
     left: 50%;
     transform: translate(-50%, 50%);
+}
+.app-icon#projects span, .app-icon#socials span {
+    color: white;
+    top: 100%;
+    left: 50%;
+    transform: translate(-28%, 50%);
 }
 .icon-img {
     width: 75%;
@@ -239,7 +244,29 @@ a:hover {
 
 }
 
-.switch-container {
+#language-picker-select {
+    text-align: center;
+    background: transparent;       
+    border: 1px solid rgb(var(--text1));
+    border-radius: 4px;           
+    padding: 0.25rem 0.25rem;
+    appearance: none;              /* remove default arrow styling */
+    -webkit-appearance: none;      /* safari/chrome */
+    -moz-appearance: none;         /* firefox */
+    cursor: pointer;               
+    font-size: 1rem;               
+    color: inherit;  
+    
+    transform: translate(-25%, -25%)
+}
+#language-picker-select::after {
+    content: 'hi';
+    position: absolute;
+    right: 0.5rem;
+    pointer-events: none;
+}
+
+.switch-container, .lang-selector-container {
     width: 100%;
     display: flex;          
     justify-content: space-between; 
@@ -248,10 +275,23 @@ a:hover {
     
     border-bottom: 1px solid rgb(var(--text2), 0.2);
 }
-.switch-label {
-    width: 100px;
+
+.language-selector-container form {
+    display: inline-flex;
+    background: transparent;
+    border: none;
+
+}
+
+.switch-label, .language-selector-label {
+    width: 150px;
     font-size: 1.2rem;
 }
+
+.language-selector-label {
+    transform: translateY(-25%);
+}
+
 .switch {
     margin: 1rem;
     position: relative;
