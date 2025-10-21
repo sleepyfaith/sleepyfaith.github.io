@@ -1,5 +1,5 @@
 import { AboutWindow, LikesWindow, ProjectsWindow, SpecsWindow, SocialsWindow, SettingsWindow } from './windows.js';
-import { updateClock, loadTheme, loadLang, preloadLocales } from './util.js';
+import { updateClock, loadTheme, loadLang, preloadLocales, closeTopWindow } from './util.js';
 
 document.getElementById("about").addEventListener("click", () => {
 
@@ -46,6 +46,12 @@ document.getElementById("settings").addEventListener("click", () => {
     });
 }) 
 
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closeTopWindow();
+    }
+});
+
 
 
 preloadLocales()
@@ -54,7 +60,7 @@ updateClock()
 
 setTimeout(() => {
     loadLang("en")
-}, 100)
+}, 200)
 
 setInterval(() => {
     updateClock()

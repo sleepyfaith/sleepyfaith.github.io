@@ -1,3 +1,23 @@
+import { windowOrder } from "./windowBase.js";
+
+export function closeTopWindow() {
+    let type = windowOrder[0];
+
+    const el = document.getElementsByClassName(`${type}-window`)[0];
+    if (!el) return;
+
+    const isMobile = !window.matchMedia("(min-width: 768px)").matches;
+    if (isMobile) {
+        el.remove();
+    } else {
+        el.classList.remove("open");
+        el.addEventListener("transitionend", () => el.remove());
+    }
+
+    windowOrder.shift()
+
+}
+
 export function updateClock() {
     const date = new Date();
     const hours = String(date.getHours()).padStart(2, '0');
@@ -24,8 +44,6 @@ export function toggleTheme() {
 export function loadTheme() {
 
     var darkMode = localStorage.getItem("mainDarkMode");
-
-    console.log(darkMode)
 
     if (darkMode == null) {
         localStorage.setItem("mainDarkMode", "false");
