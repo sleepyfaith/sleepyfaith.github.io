@@ -1,0 +1,60 @@
+{
+    "about": {
+        "title": "a propos de moi! <3",
+        "age": "britannique, trans fille, 19 ans",
+        "relationship": "5 annees magiques avec elle",
+        "kotlin": "accro a kotlin",
+        "hatepeople": "j'ai peur des gens",
+        "eepy": "constamment somnolente",
+        "frontend": "fascinee par le cool front-end" 
+    },
+    "likes": {
+        "title": "ce que j'aime :3",
+        "animals": "chats et renards",
+        "seedfind": "seedfinding dans minecraft",
+        "speedrun": "speedrunning dans superliminal",
+        "maze": "labyrinthes et generateurs de labyrinthes",
+        "rlai": "reinforcement learning par IA"
+    },
+
+    "specs":  {
+        "title": "mon pc!!"
+    },
+
+    "popup": {
+        "title": "avertissement du systeme",
+        "link": "ouvrir ce lien dans un nouvel onglet ?",
+        "file": "ce fichier est heberge en externe. l'ouvrir dans le navigateur ?",
+        "yes": "oui",
+        "no": "non"
+    },
+
+    "settings": {
+        "title": "parametres :3",
+        "theme": "mode sombre",
+        "language": "langue",
+        "languageName": "francais"
+    },
+
+    "apps": {
+        "likes": "gouts",
+        "socials": "reseaux",
+        "specs": "specs du pc",
+
+        "projects": "projets",
+        "about": "a-propos-de-moi",
+
+        "connect4": "puissance4",
+        "maze": "labyrinthe",
+        "mazegen": "generateurs-de-labyrinthes",
+        "website": "mon-site-web",
+        "clock": "horloge",
+        "faithbot": "faithbot"
+
+    },
+    "misc": {
+        "app": "app", 
+        "web": "web", 
+        "py": "py"
+    }
+}

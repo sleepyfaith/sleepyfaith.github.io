@@ -23,7 +23,7 @@
         "languageName": "español" 
     },
     "popup": {
-        "title": "aviso del sistema",
+        "title": "avertissement du système",
         "link": "abrir link en nueva pestaña?",
         "file": "este archivo esta hosteado externamente. abrir en el navegador?",
         "yes": "si",

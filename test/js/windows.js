@@ -198,6 +198,7 @@ export class SettingsWindow extends Window {
                         <option lang="en" value="en">${getFromLocale("en", "settings.languageName")}</option>
                         <option lang="nl" value="nl">${getFromLocale("nl", "settings.languageName")}</option>
                         <option lang="es" value="es">${getFromLocale("es", "settings.languageName")}</option>
+                        <option lang="fr" value="fr">${getFromLocale("fr", "settings.languageName")}</option>
                     </select>
                 </form>
             </div>
