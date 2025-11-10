@@ -136,10 +136,10 @@ a:hover {
     align-items: center;
     align-content: flex-start;
 
-    gap: 0rem 3rem;
+    gap: 1rem 2rem;
     .app-icon {
         margin: 1rem;
-        margin-left: 2%;
+        margin-left: 3%;
         color: rgb(var(--text2));
         border-color: rgb(var(--text2));
     };
@@ -149,6 +149,12 @@ a:hover {
         top: 50%;
         transform: translate(-50%, -50%);
     };
+    .app-icon .app-label {
+        width: 20ch;
+        height: 2ch;
+        text-wrap: wrap;
+    }
+
 }
 
 #socials .app-label, #projects .app-label {
