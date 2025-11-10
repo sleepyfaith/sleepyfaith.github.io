@@ -18,7 +18,8 @@
     },
 
     "specs":  {
-        "title": "my pc!!"
+        "title": "my pc!!",
+        "link": "specs"
     },
 
     "popup": {

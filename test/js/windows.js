@@ -37,7 +37,7 @@ export class SpecsWindow extends Window {
                 <p><i class="fa-solid fa-hard-drive"></i> Western Digital Blue 1TB HDD
                 <p><i class="fa-solid fa-hard-drive"></i> Seagate Exos 8TB HDD</p>
                 <p><i class="fa-solid fa-display"></i>MSI RTX 3060</p>
-                <p><a href="https://uk.pcpartpicker.com/list/gV3s9C" target="_blank" style="font-weight:bold"><i class="fa-solid fa-link"></i> specs</a></p>
+                <p><a href="https://uk.pcpartpicker.com/list/gV3s9C" target="_blank" style="font-weight:bold"><i class="fa-solid fa-link"></i> ${locale.specs.link}</a></p>
             `)
     }
 }

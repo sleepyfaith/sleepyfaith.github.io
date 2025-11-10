@@ -31,7 +31,8 @@
         "languageName": "nederlands"
     },
     "specs":  {
-        "title": "mijn pc!!"
+        "title": "mijn pc!!",
+        "link": "specificaties"
     },
     "apps": {
         "likes": "vind-ik-leuks", 
