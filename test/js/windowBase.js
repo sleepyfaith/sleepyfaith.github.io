@@ -121,10 +121,17 @@ export class Window {
 
             newWidth = Math.max(300, newWidth)
             newHeight = Math.max(300, newHeight)
+            
             el.style.width = newWidth + "px"
             el.style.height = newHeight + "px"
-            el.style.left = newLeft + "px";
-            el.style.top = newTop + "px";
+            if (newWidth != 300) {
+                el.style.left = newLeft + "px";
+
+            } 
+            if (newHeight != 300) {
+                el.style.top = newTop + "px";
+
+            }
 
         }
         const stopResizeElement = () => {
