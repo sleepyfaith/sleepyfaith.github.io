@@ -145,7 +145,7 @@ export class Window {
 
     makeDraggable() {
 
-        if (this.type == "popup" || this.isMobile) return;
+        if (this.isMobile) return;
     
 
         var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;

@@ -197,10 +197,10 @@ a:hover {
         font-weight: bold;
     }
     .cancel-btn:hover {
-        background-color: rgb(255, 139, 139, 0.75) 
+        background-color: rgb(255, 139, 139, 0.5) 
     }
     .confirm-btn:hover {
-        background-color: rgb(180, 255, 180, 0.75);
+        background-color: rgb(180, 255, 180, 0.5);
     }
 }
 .desktop {

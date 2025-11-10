@@ -53,7 +53,7 @@ body {
     position: absolute;
     left: calc(50% + 30rem);
     top: calc(50% + 15rem);
-    transform-origin: center;
+
     transform: scale(0);
     transition: transform 300ms;
     will-change: transform;
@@ -64,8 +64,11 @@ body {
 }
 .popup-window {
     width: 25rem;
+    height: 10rem;
+    backdrop-filter: unset;
+    left: calc(50vw - 20rem);
+    top: calc(50vh - 5rem);
 }
-
 
 
 .content {
