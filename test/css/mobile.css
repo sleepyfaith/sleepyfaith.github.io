@@ -17,6 +17,15 @@ body {
     justify-content: left;
 }
 
+#socials .app-label, #projects .app-label {
+    position: absolute !important;
+    left: 10% !important;
+    top: 90% !important;
+
+    text-align: center;
+    width: 20ch;
+}
+
 #projects, #socials {
     transform: translate(-25%, -15%);
 }
