@@ -94,6 +94,7 @@ a:hover {
         left: 50%;
         transform: translateX(-50%);
         pointer-events: none;
+        text-wrap: nowrap;
     };
 
     .close-btn {
