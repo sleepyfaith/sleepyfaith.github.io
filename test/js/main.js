@@ -63,8 +63,9 @@ preloadLocales()
 loadTheme()
 updateClock()
 
+
 setTimeout(() => {
-    loadLang("en")
+    loadLang(localStorage.getItem("lang") ? localStorage.getItem("lang") : "en")
 }, 200)
 
 setInterval(() => {

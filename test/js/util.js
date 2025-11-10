@@ -98,6 +98,7 @@ export function loadLang(langCode) {
     }
 
     document.documentElement.lang = langCode;
+    localStorage.setItem("lang", langCode)
 
     document.querySelectorAll("[data-i18n]").forEach(el => {
         const keyPath = el.dataset.i18n.split("."); // e.g., "about.title"
