@@ -111,7 +111,7 @@ export class SocialsWindow extends Window {
     constructor(locale) {
         let isDark = localStorage.getItem("mainDarkMode") == "true" ? "" : "-dark"
 
-        super("socials", "socials", `
+        super("socials", `${locale.apps.socials}`, `
 
             <div class="app-icon" id="github">
                 <img class="icon-img" src="assets/github${isDark}.svg"></img>
@@ -195,10 +195,10 @@ export class SettingsWindow extends Window {
                 <span class="language-selector-label" for="language-picker-select" data-i18n="settings.language">${locale.settings.language}</span>
                 <form action="language-selector">
                     <select name="language-picker-select" id="language-picker-select">
-                        <option lang="en" value="en">${getFromLocale("en", "settings.languageName")}</option>
-                        <option lang="nl" value="nl">${getFromLocale("nl", "settings.languageName")}</option>
-                        <option lang="es" value="es">${getFromLocale("es", "settings.languageName")}</option>
-                        <option lang="fr" value="fr">${getFromLocale("fr", "settings.languageName")}</option>
+                        <option lang="en" value="en" ${document.documentElement.lang == "en" ? "selected" : ""}>${getFromLocale("en", "settings.languageName")}</option>
+                        <option lang="es" value="es" ${document.documentElement.lang == "es" ? "selected" : ""}>${getFromLocale("es", "settings.languageName")}</option>
+                        <option lang="fr" value="fr" ${document.documentElement.lang == "fr" ? "selected" : ""}>${getFromLocale("fr", "settings.languageName")}</option>
+                        <option lang="nl" value="nl" ${document.documentElement.lang == "nl" ? "selected" : ""}>${getFromLocale("nl", "settings.languageName")}</option>
                     </select>
                 </form>
             </div>

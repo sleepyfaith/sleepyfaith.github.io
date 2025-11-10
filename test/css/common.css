@@ -150,6 +150,12 @@ a:hover {
     };
 }
 
+#socials .app-label, #projects .app-label {
+    position: absolute !important;
+    left: 55% !important;
+    top: 75% !important;
+}
+
 
 .app-icon#connect4 i {
     top: 5%;
@@ -246,7 +252,7 @@ a:hover {
 
 #language-picker-select {
     text-align: center;
-    background: transparent;       
+    background: rgb(var(--bg1));       
     border: 1px solid rgb(var(--text1));
     border-radius: 4px;           
     padding: 0.25rem 0.25rem;

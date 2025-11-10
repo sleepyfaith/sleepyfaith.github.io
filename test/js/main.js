@@ -35,7 +35,12 @@ document.getElementById("specs").addEventListener("click", () => {
     });
 }) 
 document.getElementById("socials").addEventListener("click", () => {
-    new SocialsWindow()
+    let currentLang = document.documentElement.lang.toLowerCase()
+    fetch(`lang/${currentLang}.json`)
+    .then(res => res.json())
+    .then(locale => {
+        new SocialsWindow(locale);
+    });
 }) 
 document.getElementById("settings").addEventListener("click", () => {
     let currentLang = document.documentElement.lang.toLowerCase()
