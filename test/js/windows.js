@@ -22,7 +22,7 @@ export class LikesWindow extends Window {
                 <p data-i18n="likes.seedfind"><i class="fa-regular fa-heart" style="color:pink"></i> ${locale.likes.seedfind}</p>
                 <p data-i18n="likes.speedrun"><i class="fa-regular fa-heart" style="color:pink"></i> ${locale.likes.speedrun}</p>
                 <p data-i18n="likes.maze"><i class="fa-regular fa-heart" style="color:pink"></i> ${locale.likes.maze}</a></p>
-                <p data-i18n="likes.rl-ai"><i class="fa-regular fa-heart" style="color:pink"></i> ${locale.likes.rlai}</p>
+                <p data-i18n="likes.rlai"><i class="fa-regular fa-heart" style="color:pink"></i> ${locale.likes.rlai}</p>
                 `)
     }
 }
