@@ -58,8 +58,18 @@ body {
     display: inline;
 }
 
+
+.projects-window .content, .socials-window .content {
+    justify-content: center;
+}
 .projects-window .content .app-icon, .socials-window .content .app-icon {
     margin: 2rem;
+    width: 20vw;
+    height: 20vw;
+
+    i {
+        font-size: 2rem;
+    }
 
 }
 
