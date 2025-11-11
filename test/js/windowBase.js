@@ -226,7 +226,8 @@ export class Window {
         }
     }
     close() {
-        if (this.isMobile) {
+        const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+        if (!!isReduced) {
             this.el.remove()
             return
         }

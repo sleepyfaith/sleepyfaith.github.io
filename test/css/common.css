@@ -79,6 +79,20 @@ a:hover {
 .window {
     position: absolute;
     color: rgb(var(--text1));
+    
+    transform: scale(0);
+    transition: transform 300ms;
+    will-change: transform;
+
+}
+@media (prefers-reduced-motion: reduce) {
+    .window {
+        animation: none !important;
+        transition-duration: 0s !important;
+    }
+}
+.window.open {
+    transform: scale(1);
     backdrop-filter: blur(4px);
 }
 

@@ -54,14 +54,8 @@ body {
     left: calc(50% + 30rem);
     top: calc(50% + 15rem);
 
-    transform: scale(0);
-    transition: transform 300ms;
-    will-change: transform;
+}
 
-}
-.window.open {
-    transform: scale(1);
-}
 .popup-window {
     width: 20rem;
     height: 15rem;
