@@ -166,7 +166,14 @@ a:hover {
 }
 
 
+#socials .app-label, #projects .app-label {
+    position: absolute !important;
+    left: 15% !important;
+    top: 75% !important;
 
+    text-align: center;
+    width: 20ch;
+}
 
 .app-icon#connect4 i {
     top: 5%;

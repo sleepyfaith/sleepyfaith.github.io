@@ -89,14 +89,7 @@ body {
     display: none;
 }
 
-#socials .app-label, #projects .app-label {
-    position: absolute !important;
-    left: 15% !important;
-    top: 75% !important;
 
-    text-align: center;
-    width: 20ch;
-}
 
 .content {
     height: 100%;
