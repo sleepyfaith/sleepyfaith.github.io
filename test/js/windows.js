@@ -153,7 +153,7 @@ export class Connect4Window extends Window {
     constructor(locale) {
         super("connect4", `${locale.apps.connect4} :o`, `
             
-            <iframe src="../connect4" style="width: 100%; height: 100%; zoom: 0.7; border: none;"></iframe>
+            <iframe src="../connect4" style="width: 100%; height: 100%; zoom: 0.7; border: none;" id="connect4-iframe"></iframe>
 
             `)
     }
@@ -163,17 +163,18 @@ export class MazeGameWindow extends Window {
     constructor(locale) {
         super("maze", `${locale.apps.maze} c:`, `
             
-            <iframe src="../maze" style="width: 100%; height: 100%; zoom: 0.7; border: none;"></iframe>
+            <iframe src="../maze" style="width: 100%; height: 100%; zoom: 0.7; border: none;" id="maze-iframe"></iframe>
 
             `)
     }
+    
 }
 
 export class ClockWindow extends Window {
     constructor(locale) {
         super("clock", `${locale.apps.clock}?!`, `
             
-            <iframe src="../clocks-clock" style="width: 100%; height: 100%; zoom: 0.7; border: none;"></iframe>
+            <iframe src="../clocks-clock" style="width: 100%; height: 100%; zoom: 0.7; border: none;" id="clock-iframe"></iframe>
 
             `)
     }

@@ -49,7 +49,11 @@ export class Window {
         var closebtnStr = "x"
         if (this.isMobile) closebtnStr = `<i class="fa-solid fa-house"></i>`
 
-        win.innerHTML = `<div class="${this.type}-titlebar titlebar"><p data-i18n="${this.type}.title">${this.title}</p> <button class='close-btn'>${closebtnStr}</button></div>`
+        win.innerHTML = `<div class="${this.type}-titlebar titlebar"><p data-i18n="${this.type}.title">${this.title}</p> <button class='close-btn'><span>${closebtnStr}</span></button></div>`
+        
+        if (navigator.userAgent.toLowerCase().includes("iphone")) {
+            win.classList.add("iphone")
+        }
 
         if (this.content instanceof HTMLElement) {
             win.appendChild(this.content);
@@ -67,8 +71,9 @@ export class Window {
     }
 
     addResizers() {
-
-
+        
+        if (this.type == "popup") return; 
+        
         const directions = ["n", "e", "s", "w", "ne", "nw", "se", "sw"];
         directions.forEach(dir => {
             const r = document.createElement("div");
@@ -81,6 +86,7 @@ export class Window {
         let startX, startY, startWidth, startHeight, startLeft, startTop, activeDir;
 
         function resizePointerDown(e) {
+
             const resizer = e.target
             if (!resizer.classList.contains("resizer")) return;
             e.preventDefault();
@@ -97,6 +103,8 @@ export class Window {
 
             document.addEventListener("pointermove", elementResize)
             document.addEventListener("pointerup", stopResizeElement)
+            updateWindowOrder(this.type)
+
         }
         function elementResize(e) { 
             e.preventDefault();

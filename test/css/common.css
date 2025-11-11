@@ -13,6 +13,9 @@ html.light {
 
     --bg-alpha: 0.1;
 
+    --red: 210, 15, 57;
+    
+
 }
 
 html.dark {
@@ -28,7 +31,10 @@ html.dark {
     
     --sliderbg: 220, 224, 232;
 
-    --bg-alpha: 0.25
+    --bg-alpha: 0.25;
+
+    --red: 237, 135, 150;
+    
 }
 
 body {
@@ -75,6 +81,8 @@ a:hover {
     color: rgb(var(--text1));
     backdrop-filter: blur(4px);
 }
+
+
 
 .titlebar {
     display: flex;

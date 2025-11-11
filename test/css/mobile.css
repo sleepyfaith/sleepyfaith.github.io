@@ -30,20 +30,15 @@ body {
     transform: translate(-25%, -15%);
 }
 
+
+
 .window { 
     width: 100vw;
 
     left: 0;
     top: 1.5rem;
 }
-.window::after {
-    display: inline-block;
-    width: 100vw;
-    height: 3rem;
-    
-    background-color: rgb(var(--bg2));
-    content:" "
-}
+
 .popup-window { 
     width: 80%;
     gap: 0;
@@ -93,21 +88,39 @@ body {
         align-content: center;
     }
 }
+.iphone .content {
+    height: 88vh;
+}
+
+.window::after {
+    display: inline-block;
+    width: 100vw;
+    height: 6vh !important;
+    
+    background-color: rgb(var(--bg2));
+    content: " "
+}
 
 
 .close-btn {
-    top: calc(100vh - 7.5rem);
+    top: calc(100vh - 14vh);
 
     aspect-ratio: 1;
-    width: 2.25rem;
+    width: 5vh;
 
     background-color: black;
     border: none;
     border-radius: 100vh;
 
+    font-size: 1.75vh;
+
     i {
         color: white;
     }
+}
+.iphone .titlebar .close-btn {
+    top: calc(100vh - 8.25vh);
+    
 }
 
 .app-icon#connect4 {
