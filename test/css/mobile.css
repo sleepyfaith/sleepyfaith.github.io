@@ -135,7 +135,7 @@ body {
 
 
 .close-btn {
-    top: calc(100vh - 14vh);
+    top: 86vh;
 
     aspect-ratio: 1;
     width: 5vh;
@@ -151,7 +151,7 @@ body {
     }
 }
 .iphone .titlebar .close-btn {
-    top: calc(100vh - 8.25vh);
+    top: 92vh;
     
 }
 
