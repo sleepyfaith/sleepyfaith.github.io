@@ -10,21 +10,14 @@ body {
 }
 
 .desktop {
-    margin-top: 2rem;
-    margin-left: 2rem;  
+    margin-top: 5vh;
+    margin-left: 6vh;  
     gap: 5rem;
 
     justify-content: left;
 }
 
-#socials .app-label, #projects .app-label {
-    position: absolute !important;
-    left: 10% !important;
-    top: 90% !important;
 
-    text-align: center;
-    width: 20ch;
-}
 
 #projects, #socials {
     transform: translate(-25%, -15%);
@@ -38,6 +31,45 @@ body {
     left: 0;
     top: 1.5rem;
 }
+.window::after {
+    display: inline-block;
+    width: 100vw;
+    height: 6vh !important;
+    
+    background-color: rgb(var(--bg2));
+    content: " "
+}
+.projects-window, .socials-window {
+    * {
+        background-color: transparent;
+    }
+    .content {
+        transform: translate(5vw, 15vh);
+        border: none;
+        border-radius: 10vw;
+        background-color: rgb(var(--bg2), 0.85);
+        width: 90vw;
+        height: 50vh;
+
+        padding-top: 5ch;
+
+        gap: 0;
+        
+    }
+    .titlebar p {
+        position: absolute; 
+        top: 30%;
+        left: 50%;
+        z-index: 10000;
+        font-size: 2rem;
+        
+    }
+
+}
+.projects-window::after, .socials-window::after {
+    background-color: transparent;
+}
+
 
 .popup-window { 
     width: 80%;
@@ -92,18 +124,12 @@ body {
     height: 88vh;
 }
 
-.window::after {
-    display: inline-block;
-    width: 100vw;
-    height: 6vh !important;
-    
-    background-color: rgb(var(--bg2));
-    content: " "
-}
+
+
 
 
 .close-btn {
-    top: calc(100vh - 14vh);
+    top: calc(100vh - 13.5vh);
 
     aspect-ratio: 1;
     width: 5vh;
