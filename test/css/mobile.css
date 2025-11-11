@@ -30,7 +30,7 @@ body {
     width: 100vw;
 
     left: 0;
-    top: 1.5rem;
+    top: 4.5vh;
 }
 .window::after {
     display: inline-block;
@@ -135,7 +135,7 @@ body {
 
 
 .close-btn {
-    top: 84vh;
+    top: 86vh;
 
     aspect-ratio: 1;
     width: 5vh;
