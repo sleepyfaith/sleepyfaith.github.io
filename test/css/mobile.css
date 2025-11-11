@@ -3,7 +3,8 @@ body {
 }
 
 .panel {
-    height: 1.5rem;
+    height: 4.5vh;
+    font-size: 2.5vh;
     .widget {
         margin: 0.5rem;
     };
@@ -134,7 +135,7 @@ body {
 
 
 .close-btn {
-    top: calc(100vh - 13.5vh);
+    top: calc(100vh - 14vh);
 
     aspect-ratio: 1;
     width: 5vh;
