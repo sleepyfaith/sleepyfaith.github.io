@@ -55,8 +55,8 @@ export class Window {
         if (this.isMobile && this.type != "popup") closeTopWindow()
         win.innerHTML = `<div class="${this.type}-titlebar titlebar"><p data-i18n="${this.type}.title">${this.title}</p> <button class='close-btn'><span>${closebtnStr}</span></button></div>`
         
-        if (navigator.userAgent.toLowerCase().includes("iphone")) {
-            win.classList.add("iphone")
+        if (!navigator.userAgent.toLowerCase().includes("iphone")) {
+            win.classList.add("android")
         }
 
         if (this.content instanceof HTMLElement) {

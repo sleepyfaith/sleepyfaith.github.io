@@ -51,6 +51,7 @@ body {
     background-color: rgb(var(--bg2), 0.90);;
 }
 
+
 .projects-window, .socials-window {
     * {
         background-color: transparent;
@@ -61,7 +62,7 @@ body {
         border-radius: 10vw;
         background-color: rgb(var(--bg2), 0.85);
         width: 90vw;
-        height: 50vh;
+        height: 50vh !important;
 
         padding-top: 5ch;
 
@@ -78,6 +79,7 @@ body {
 .projects-window::after, .socials-window::after {
     background-color: transparent;
 }
+
 
 
 .popup-window { 
@@ -150,6 +152,13 @@ body {
     i {
         color: white;
     }
+}
+
+.android.window .content {
+    height: 77vh;
+}
+.android.window .titlebar .close-btn {
+    top: 82vh;
 }
 .projects-window .titlebar .close-btn, .socials-window .titlebar .close-btn {
     transform: translateY(-100%);
