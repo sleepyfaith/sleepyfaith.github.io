@@ -1,3 +1,5 @@
+import { closeTopWindow } from "./util.js";
+
 export const windowOrder = []
 
 export function updateWindowOrder(type) {
@@ -42,13 +44,15 @@ export class Window {
         
         if (document.getElementsByClassName(`${this.type}-window window`).length != 0) return
         
+        
+
         const win = document.createElement("div");
         win.className = `${this.type}-window window`;
 
 
         var closebtnStr = "x"
         if (this.isMobile) closebtnStr = `<i class="fa-solid fa-house"></i>`
-
+        if (this.isMobile && this.type != "popup") closeTopWindow()
         win.innerHTML = `<div class="${this.type}-titlebar titlebar"><p data-i18n="${this.type}.title">${this.title}</p> <button class='close-btn'><span>${closebtnStr}</span></button></div>`
         
         if (navigator.userAgent.toLowerCase().includes("iphone")) {

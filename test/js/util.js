@@ -6,8 +6,8 @@ export function closeTopWindow() {
     const el = document.getElementsByClassName(`${type}-window`)[0];
     if (!el) return;
 
-    const isMobile = !window.matchMedia("(min-width: 768px)").matches;
-    if (isMobile) {
+    const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+    if (!!isReduced) {
         el.remove();
     } else {
         el.classList.remove("open");
