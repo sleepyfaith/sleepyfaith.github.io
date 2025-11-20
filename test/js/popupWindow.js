@@ -3,7 +3,7 @@ import { getLocale } from "./util.js"
 
 
 export class PopupWindow extends Window {
-    constructor(localeOld, type, url) {
+    constructor(localeOld, type, url, creator) {
 
         const locale = getLocale()
         
@@ -93,7 +93,7 @@ export class PopupWindow extends Window {
 
         content.appendChild(buttons)
         
-        super("popup", locale.popup.title, content)
+        super(`${creator} popup`, locale.popup.title, content)
         confirmBtn.onclick = () => {
             this.close();
             window.open(url, "_blank");

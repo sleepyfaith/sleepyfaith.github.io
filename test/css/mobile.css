@@ -81,7 +81,7 @@ body {
 }
 
 .popup-window { 
-    height: 30vh;
+    height: fit-content;
     width: 80%;
     left: 10%;
     top: 50%;
@@ -90,7 +90,8 @@ body {
     display: none;
 }
 .popup-window .content {
-    height: 30vh !important;
+    height: max-content !important;
+    padding-bottom: 5vh;
     background-color: rgb(var(--bg2));
     p {
         display: block;
@@ -145,6 +146,9 @@ body {
 
 }
 
+.popup-window::after {
+    display: none;
+}
 
 .projects-window .content, .socials-window .content {
     justify-content: center;

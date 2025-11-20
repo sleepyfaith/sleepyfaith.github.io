@@ -93,12 +93,12 @@ export class ProjectsWindow extends Window {
 
         el.querySelector("#faithbot").addEventListener("click", (e) => {
             e.stopPropagation();
-            new PopupWindow(locale, "file", "https://github.com/sleepyfaith/FaithBot");
+            new PopupWindow(locale, "file", "https://github.com/sleepyfaith/FaithBot", "projects");
         });
 
         el.querySelector("#mazegen").addEventListener("click", (e) => {
             e.stopPropagation();
-            new PopupWindow(locale, "file", "https://github.com/sleepyfaith/hunt-and-kill");
+            new PopupWindow(locale, "file", "https://github.com/sleepyfaith/hunt-and-kill",  "projects");
         });
 
         el.querySelector("#clock").addEventListener("click", (e) => {
@@ -141,11 +141,11 @@ export class SocialsWindow extends Window {
             `)
 
             const el = this.el;
-            el.querySelector("#github").addEventListener("click", () => new PopupWindow(locale, "link", "https://github.com/sleepyfaith"));
-            el.querySelector("#youtube").addEventListener("click", () => new PopupWindow(locale, "link", "https://youtube.com/@sleepyyfaith"));
-            el.querySelector("#instagram").addEventListener("click", () => new PopupWindow(locale, "link", "https://instagram.com/sleepyfaith_"));
-            el.querySelector("#pronouns-page").addEventListener("click", () => new PopupWindow(locale, "link", "https://pronouns.page/@sleepyfaith"));
-            el.querySelector("#twitter").addEventListener("click", () => new PopupWindow(locale, "link", "https://twitter.com/sleepyyfaith"));
+            el.querySelector("#github").addEventListener("click", () => new PopupWindow(locale, "link", "https://github.com/sleepyfaith", socials));
+            el.querySelector("#youtube").addEventListener("click", () => new PopupWindow(locale, "link", "https://youtube.com/@sleepyyfaith", socials));
+            el.querySelector("#instagram").addEventListener("click", () => new PopupWindow(locale, "link", "https://instagram.com/sleepyfaith_", socials));
+            el.querySelector("#pronouns-page").addEventListener("click", () => new PopupWindow(locale, "link", "https://pronouns.page/@sleepyfaith", socials));
+            el.querySelector("#twitter").addEventListener("click", () => new PopupWindow(locale, "link", "https://twitter.com/sleepyyfaith", socials));
     }
 }
 

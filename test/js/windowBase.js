@@ -52,7 +52,7 @@ export class Window {
 
         var closebtnStr = "x"
         if (this.isMobile) closebtnStr = `<i class="fa-solid fa-house"></i>`
-        if (this.isMobile && this.type != "popup") closeTopWindow()
+        if (this.isMobile && !this.type.includes("popup")) closeTopWindow()
         win.innerHTML = `<div class="${this.type}-titlebar titlebar"><p data-i18n="${this.type}.title">${this.title}</p> <button class='close-btn'><span>${closebtnStr}</span></button></div>`
         
         if (!navigator.userAgent.toLowerCase().includes("iphone")) {
@@ -235,6 +235,11 @@ export class Window {
             this.el.remove()
             return
         }
+
+        let el = document.querySelector(`.${this.type}.popup-window`)
+        console.log(el)
+        if (el != null) { el.remove() }
+
         this.el.classList.remove("open")
         this.el.addEventListener("transitionend", () => {
             this.el.remove();
