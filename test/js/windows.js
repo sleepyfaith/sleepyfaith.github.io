@@ -141,11 +141,11 @@ export class SocialsWindow extends Window {
             `)
 
             const el = this.el;
-            el.querySelector("#github").addEventListener("click", () => new PopupWindow(locale, "link", "https://github.com/sleepyfaith", socials));
-            el.querySelector("#youtube").addEventListener("click", () => new PopupWindow(locale, "link", "https://youtube.com/@sleepyyfaith", socials));
-            el.querySelector("#instagram").addEventListener("click", () => new PopupWindow(locale, "link", "https://instagram.com/sleepyfaith_", socials));
-            el.querySelector("#pronouns-page").addEventListener("click", () => new PopupWindow(locale, "link", "https://pronouns.page/@sleepyfaith", socials));
-            el.querySelector("#twitter").addEventListener("click", () => new PopupWindow(locale, "link", "https://twitter.com/sleepyyfaith", socials));
+            el.querySelector("#github").addEventListener("click", () => new PopupWindow(locale, "link", "https://github.com/sleepyfaith", "socials"));
+            el.querySelector("#youtube").addEventListener("click", () => new PopupWindow(locale, "link", "https://youtube.com/@sleepyyfaith", "socials"));
+            el.querySelector("#instagram").addEventListener("click", () => new PopupWindow(locale, "link", "https://instagram.com/sleepyfaith_", "socials"));
+            el.querySelector("#pronouns-page").addEventListener("click", () => new PopupWindow(locale, "link", "https://pronouns.page/@sleepyfaith", "socials"));
+            el.querySelector("#twitter").addEventListener("click", () => new PopupWindow(locale, "link", "https://twitter.com/sleepyyfaith", "socials"));
     }
 }
 
