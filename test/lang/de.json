@@ -1,0 +1,54 @@
+{
+    "about": {
+        "title": "über mich! <3",
+        "age": "20 jähriges britisches trans mädchen",
+        "beziehung": "5 wunderschöne jahre mit ihr",
+        "kotlin": "kotlin genießer",
+        "hasseleute": "panische angst vor leuten",
+        "müdi": "dauerhaft müdi",
+        "frontend": "fasziniert von coolen front-end" 
+    },
+    "likes": {
+        "title": "dinge die ich mag :3",
+        "tiere": "katzen und füchse",
+        "seedfind": "minecraft seedfinding",
+        "speedrun": "superliminal speedruns",
+        "labyrinth": "labyrinthe und labyrinth generatoren",
+        "rlai": "reinforcement learning KI"
+    },
+    "specs":  {
+        "title": "mein pc!!",
+        "link": "specs"
+    },
+    "popup": {
+        "title": "system prompt",
+        "link": "diesen link in einen neuen Tab öffnen?",
+        "file": "diese datei ist external gehostet. im browser öffnen?",
+        "yes": "ja",
+        "no": "nein"
+    },
+    "settings": {
+        "title": "einstellungen :3",
+        "theme": "dunkel modus",
+        "language": "sprache", 
+        "languageName": "deutsch"
+    },
+    "apps": {
+        "likes": "mag-ich", 
+        "socials": "sozial",
+        "specs": "spezifikationen", 
+        "projects": "projekte",
+        "about": "über-mich",
+        "connect4": "connect4",
+        "maze": "labyrinth",
+        "mazegen": "labyrinth-generator",
+        "website": "mywebsite",
+        "clock": "uhr",
+        "faithbot": "faithbot"
+    },
+    "misc": {
+        "app": "app", 
+        "web": "web",
+        "py": "py"
+    }
+}

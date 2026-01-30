@@ -61,7 +61,7 @@ export function loadTheme() {
 const locales = {};
 
 export async function preloadLocales() {
-    const langs = ["en", "nl", "es", "fr"];
+    const langs = ["en", "nl", "es", "fr", "de"];
     for (const lang of langs) {
         const res = await fetch(`lang/${lang}.json`);
         locales[lang] = await res.json();

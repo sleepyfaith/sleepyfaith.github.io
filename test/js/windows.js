@@ -196,6 +196,7 @@ export class SettingsWindow extends Window {
                 <span class="language-selector-label" for="language-picker-select" data-i18n="settings.language">${locale.settings.language}</span>
                 <form action="language-selector">
                     <select name="language-picker-select" id="language-picker-select">
+                        <option lang="de" value="de" ${document.documentElement.lang == "de" ? "selected" : ""}>${getFromLocale("de", "settings.languageName")}</option>
                         <option lang="en" value="en" ${document.documentElement.lang == "en" ? "selected" : ""}>${getFromLocale("en", "settings.languageName")}</option>
                         <option lang="es" value="es" ${document.documentElement.lang == "es" ? "selected" : ""}>${getFromLocale("es", "settings.languageName")}</option>
                         <option lang="fr" value="fr" ${document.documentElement.lang == "fr" ? "selected" : ""}>${getFromLocale("fr", "settings.languageName")}</option>
