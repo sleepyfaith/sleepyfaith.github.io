@@ -1,5 +1,5 @@
 import { AboutWindow, LikesWindow, ProjectsWindow, SpecsWindow, SocialsWindow, SettingsWindow } from './windows.js';
-import { updateClock, loadTheme, loadLang, preloadLocales, closeTopWindow } from './util.js';
+import { updateClock, loadTheme, loadLang, preloadLocales, closeTopWindow, addActiveWindowWidgetListeners } from './util.js';
 
 document.getElementById("about").addEventListener("click", () => {
 
@@ -59,10 +59,13 @@ document.addEventListener("keydown", function(event) {
 
 
 
+
+
+addActiveWindowWidgetListeners();
+
 preloadLocales()
 loadTheme()
 updateClock()
-
 
 setTimeout(() => {
     loadLang(localStorage.getItem("lang") ? localStorage.getItem("lang") : "en")

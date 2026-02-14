@@ -18,6 +18,16 @@ export function updateWindowOrder(type) {
         }
         zIndex--;
     }
+
+    const icons = document.querySelectorAll('#active-windows .app-icon');
+    icons.forEach(icon => {
+        const iconType = icon.id.split('-').pop(); 
+        if (iconType === type) {
+            icon.classList.add('selected');
+        } else {
+            icon.classList.remove('selected'); 
+        }
+    });
 }
 
 export class Window {
@@ -44,11 +54,11 @@ export class Window {
         
         if (document.getElementsByClassName(`${this.type}-window window`).length != 0) return
         
-        
+        document.querySelector(`#active-windows-${this.type}`).classList.toggle("hidden")
 
         const win = document.createElement("div");
         win.className = `${this.type}-window window`;
-
+            
 
         var closebtnStr = "x"
         if (this.isMobile) closebtnStr = `<i class="fa-solid fa-house"></i>`
@@ -230,6 +240,8 @@ export class Window {
         }
     }
     close() {
+        document.querySelector(`#active-windows-${this.type}`).classList.toggle("hidden")
+
         const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
         if (!!isReduced) {
             this.el.remove()

@@ -1,4 +1,4 @@
-import { windowOrder } from "./windowBase.js";
+import { windowOrder, updateWindowOrder } from "./windowBase.js";
 
 export function closeTopWindow() {
     let type = windowOrder[0];
@@ -15,6 +15,8 @@ export function closeTopWindow() {
     }
 
     windowOrder.shift()
+    document.querySelector(`#active-windows-${type}`).classList.toggle("hidden")
+
 
 }
 
@@ -25,6 +27,18 @@ export function updateClock() {
     const seconds = String(date.getSeconds()).padStart(2, '0');
 
     document.getElementById("clock").innerHTML = `${hours}:${minutes}:${seconds}`;
+}
+
+export function addActiveWindowWidgetListeners() {
+    const icons = document.querySelectorAll('#active-windows .app-icon');
+
+    icons.forEach(icon => {
+        icon.addEventListener('click', function() {
+            const type = icon.id.split('-').pop();
+            
+            updateWindowOrder(type);
+        });
+    });
 }
 export function toggleTheme() {
     

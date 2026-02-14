@@ -13,8 +13,72 @@ body {
     };
 }
 
+
+#active-windows {
+    display: flex;
+    gap: 0.5rem;
+
+    height: 25px;
+
+    .app-icon {
+        padding: 0.2rem;
+        width: 1.7rem;
+        height: 1.7rem;
+        font-size: 1.2rem;
+        color: white;
+        background-color: transparent;
+        border: none;
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .app-icon.selected {
+        background-color: rgb(var(--accent1), 0.3);
+    }
+    .app-icon:hover {
+        background-color: rgb(var(--accent1), 0.2);
+    }
+
+    .app-icon i {
+        line-height: 1.75rem;
+        width: 1.75rem;
+    }
+    #active-windows-projects, #active-windows-socials {
+        border: none;
+        font-size: 1.5rem;
+        color: pink;
+    }
+
+}
 #settings {
     font-size: 1.5rem;
+    line-height: 3rem;
+}
+
+.light #heartrate {
+    filter: brightness(0%) invert(15%);
+}
+.dark #heartrate {
+    filter: brightness(0%) invert(85%);
+}
+#clock {
+    font-weight: 1000;
+    font-size: 1.5rem;
+}
+
+#heartrate {
+    height: 2.4rem;
+    margin-top: 1.3rem;
+    iframe {
+        height: 100%;
+        width: 7rem;  
+        border: none;
+    }
+}
+
+.widget-container {
+    max-height: 80px;
+    display: flex;
 }
 
 .desktop {

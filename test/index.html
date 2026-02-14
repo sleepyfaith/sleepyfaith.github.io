@@ -23,8 +23,20 @@
     
     <body>
         <div class="panel">
-            <div class="widget" id="clock"></div>
-            <div class="widget" id="settings"><i class="fa-solid fa-gear"></i></div> 
+            <div class="right widget-container">
+                <div class="widget" id="clock"></div>
+                <div class="widget" id="active-windows">
+                    <div class="app-icon hidden" id="active-windows-about"><i class="fa-regular fa-id-card"></i></div>
+                    <div class="app-icon hidden" id="active-windows-likes"><i class="fa-regular fa-heart"></i></div>
+                    <div class="app-icon hidden" id="active-windows-specs"><i class="fa-solid fa-computer"></i></div>
+                    <div class="app-icon hidden" id="active-windows-projects"><i class="fa-solid fa-folder"></i></div>
+                    <div class="app-icon hidden" id="active-windows-socials"><i class="fa-solid fa-folder"></i></div>
+                </div>
+            </div>
+            <div class="left widget-container">
+                <div class="widget" id="heartrate"><iframe src="https://pulsoid.net/widget/view/1c041bdd-ef2f-4527-8761-571c8a67afc8" style="color: white;"></iframe></div>
+                <div class="widget" id="settings"><i class="fa-solid fa-gear"></i></div> 
+            </div>
         </div>
         <div class="desktop">
             <button class="app-icon" id="about"><i class="fa-regular fa-id-card"></i><span class="app-label" data-i18n="apps.about"></span></button>
