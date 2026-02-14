@@ -64,6 +64,8 @@ body {
 #clock {
     font-weight: 1000;
     font-size: 1.5rem;
+    max-width: 95px;
+    min-width: 95px;
 }
 
 #heartrate {
