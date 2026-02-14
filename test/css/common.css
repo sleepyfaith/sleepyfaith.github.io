@@ -82,8 +82,36 @@ a:hover {
 }
 
 #settings {
-    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 3rem;
 }
+
+.light #heartrate {
+    filter: brightness(0%) invert(15%);
+}
+.dark #heartrate {
+    filter: brightness(0%) invert(85%);
+}
+#clock {
+    font-weight: 1000;
+    font-size: 1.5rem;
+    max-width: 95px;
+    min-width: 95px;
+}
+#heartrate {
+    height: 2.4rem;
+    margin-top: 0.9rem;
+    iframe {
+        height: 100%;
+        width: 7rem;  
+        border: none;
+    }
+}
+.widget-container {
+    max-height: 80px;
+    display: flex;
+}
+
 
 
 
