@@ -21,32 +21,35 @@ body {
     height: 25px;
 
     .app-icon {
-        padding: 0.2rem;
+        padding: 0.1rem;
+        margin-top: -0.1rem;
         width: 1.7rem;
         height: 1.7rem;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         color: white;
         background-color: transparent;
-        border: none;
+        border: 2px solid white;
         border-radius: 5px;
         position: relative;
+
+        transition: none;
     }
 
     .app-icon.selected {
-        background-color: rgb(var(--accent1), 0.3);
+        background-color: rgb(var(--accent1), 0.7) !important;
     }
     .app-icon:hover {
-        background-color: rgb(var(--accent1), 0.2);
+        background-color: rgb(var(--accent1), 0.5);
     }
 
     .app-icon i {
-        line-height: 1.75rem;
-        width: 1.75rem;
+        line-height: 1.65rem;
+        width: 1.65rem;
     }
     #active-windows-projects, #active-windows-socials {
         border: none;
-        font-size: 1.5rem;
-        color: pink;
+        font-size: 1.3rem;
+        border: 2px solid white;
     }
 
 }
