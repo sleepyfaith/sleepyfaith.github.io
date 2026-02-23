@@ -7,7 +7,6 @@ export class AboutWindow extends Window {
     constructor(locale) {
         super("about", `${locale.about.title}`, `
                 <p data-i18n="about.age"><i class="fa-regular fa-heart" style="color:lightskyblue"></i> ${locale.about.age}</p>
-                <p data-i18n="about.relationship"><i class="fa-regular fa-heart" style="color:lightskyblue"></i> ${locale.about.relationship}<3</p>
                 <p data-i18n="about.kotlin"><i class="fa-regular fa-heart" style="color:lightskyblue"></i> ${locale.about.kotlin}</p>
                 <p data-i18n="about.hatepeople"><i class="fa-regular fa-heart" style="color:lightskyblue"></i> ${locale.about.hatepeople}</p>
                 <p data-i18n="about.eepy"><i class="fa-regular fa-heart" style="color:lightskyblue"></i> ${locale.about.eepy}</p>
