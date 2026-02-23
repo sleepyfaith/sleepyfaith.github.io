@@ -51,6 +51,16 @@ body {
         font-size: 1.3rem;
         border: 2px solid white;
     }
+    #active-windows-connect4 i {
+        font-size: 0.8rem;
+        filter: grayscale(100%);
+    }
+    #active-windows-connect4 i#red {
+        transform: translateY(-25%);
+    }
+    #active-windows-connect4 i#yellow {
+        transform: translateY(-75%);
+    }
 
 }
 
@@ -74,13 +84,6 @@ body {
 
 #projects, #socials {
     transform: translate(-25%, 0%);
-}
-
-
-
-.app-icon#connect4 i {
-    top: 5%;
-    transform: translate(-50%, 0);
 }
 
 .windows { 

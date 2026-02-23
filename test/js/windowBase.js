@@ -54,7 +54,9 @@ export class Window {
         
         if (document.getElementsByClassName(`${this.type}-window window`).length != 0) return
         
-        document.querySelector(`#active-windows-${this.type}`).classList.toggle("hidden")
+        try {
+            document.querySelector(`#active-windows-${this.type}`).classList.toggle("hidden")
+        } catch (error) { console.log(`${this.type} does not have an active window icon`) }
 
         const win = document.createElement("div");
         win.className = `${this.type}-window window`;
@@ -240,7 +242,10 @@ export class Window {
         }
     }
     close() {
-        document.querySelector(`#active-windows-${this.type}`).classList.toggle("hidden")
+        try {
+            document.querySelector(`#active-windows-${this.type}`).classList.toggle("hidden")
+        } catch (error) { console.log(`${this.type} does not have an active window icon`) }
+
 
         const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
         if (!!isReduced) {

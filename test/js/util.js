@@ -15,8 +15,9 @@ export function closeTopWindow() {
     }
 
     windowOrder.shift()
-    document.querySelector(`#active-windows-${type}`).classList.toggle("hidden")
-
+    try {
+        document.querySelector(`#active-windows-${this.type}`).classList.toggle("hidden")
+    } catch (error) { console.log(`${this.type} does not have an active window icon`) }
 
 }
 
