@@ -151,7 +151,7 @@ export class SpeedrunsWindow extends Window {
     constructor(locale) {
         let isDark = localStorage.getItem("mainDarkMode") == "true" ? "" : "-dark"
 
-        super("speedruns", `${locale.apps.speedruns}`, `
+        super("speedruns", `${locale.apps.speedruns} pbs`, `
                 <div class="game-container">
                     <h1 class="game-title">Superliminal</h1>
                     <div class="pb-container">
@@ -159,7 +159,7 @@ export class SpeedrunsWindow extends Window {
                     </div>
                 </div>
                 <div class="game-container">
-                    <h1 class="game-title">Minecraft</h1>
+                    <h1 class="game-title">Minecraft: Java</h1>
                     <div class="pb-container">
                         <p class="pb"><span class="category">Ranked - Village</span><span class="time">19:53.361</span></p>
                     </div>
