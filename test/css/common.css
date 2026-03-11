@@ -13,7 +13,8 @@ html.light {
     --text2: 92, 95, 119; 
     --text3: 108, 111, 133;
 
-    --accent1: 234, 118, 203;
+    --accent-pink: 234, 118, 203;
+    --accent-green: 64, 160, 43;
 
     --sliderbg: 220, 224, 232;
 
@@ -33,8 +34,9 @@ html.dark {
     --text2: 184, 192, 224; 
     --text3: 165, 173, 203;
 
-    --accent1: 245, 189, 230;
-    
+    --accent-pink: 245, 189, 230;
+    --accent-green: 166, 218, 149; 
+
     --sliderbg: 220, 224, 232;
 
     --bg-alpha: 0.25;
@@ -215,7 +217,53 @@ a:hover {
     }
 
 }
+.speedruns-window .content {
+    
+    justify-content: center;
+    align-content: start;
 
+    .game-container {
+        margin: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;        
+        width: 100%;
+        * {
+            background: none;
+            padding: 0;
+            margin: 0;
+        }
+        .pb-container {
+            display: flex;
+            flex-wrap: wrap;
+            width: fit-content;
+            height: fit-content;  
+            margin-top: 1rem;        
+            p {
+                display: inline-block;
+                text-wrap: nowrap;
+            };
+            .category {
+                background: rgb(var(--text1));
+                color: rgb(var(--bg1));
+                padding: 0.6ch;
+                font-weight: bold;
+                border-radius: 5vh 0 0 5vh;
+            }
+
+            .time {
+                background: rgb(var(--accent-green));
+                color: rgb(var(--bg1));
+                padding: 0.6ch;
+                font-weight: bold;
+                border-radius: 0 5vh 5vh 0;
+            }
+
+        }
+    }
+
+}
 
 #socials .app-label, #projects .app-label {
     position: absolute !important;
@@ -281,6 +329,9 @@ a:hover {
     border-radius: 5px;
     position: relative;
     cursor: pointer;
+}
+.app-icon#speedruns {
+    height: 3rem;
 }
 #projects, #socials {
     border: none;
@@ -399,10 +450,10 @@ a:hover {
     background-color: white;
 }
 input:checked + .slider {
-    background-color: rgb(var(--accent1))
+    background-color: rgb(var(--accent-pink))
 }
 input:focus + .slider {
-    box-shadow: 0 0 1px rgb(var(--accent1));
+    box-shadow: 0 0 1px rgb(var(--accent-pink));
 }
 input:checked + .slider:before {
     transform: translateX(25px);

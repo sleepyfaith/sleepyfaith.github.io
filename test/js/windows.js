@@ -147,6 +147,35 @@ export class SocialsWindow extends Window {
             el.querySelector("#twitter").addEventListener("click", () => new PopupWindow(locale, "link", "https://twitter.com/sleepyyfaith", "socials"));
     }
 }
+export class SpeedrunsWindow extends Window {
+    constructor(locale) {
+        let isDark = localStorage.getItem("mainDarkMode") == "true" ? "" : "-dark"
+
+        super("speedruns", `${locale.apps.speedruns}`, `
+                <div class="game-container">
+                    <h1 class="game-title">Superliminal</h1>
+                    <div class="pb-container">
+                        <p class="pb"><span class="category">Any% Glitchless</span><span class="time">24:24.7</span></p>
+                    </div>
+                </div>
+                <div class="game-container">
+                    <h1 class="game-title">Minecraft</h1>
+                    <div class="pb-container">
+                        <p class="pb"><span class="category">Ranked - Village</span><span class="time">19:53.361</span></p>
+                    </div>
+                </div>
+                <div class="game-container">
+                    <h1 class="game-title">Minecraft: Bedrock</h1>
+                    <div class="pb-container">
+                        <p class="pb"><span class="category">1.16 SSG -</span><span class="time">6:46</span></p>
+                    </div>
+                    <div class="pb-container">
+                        <p class="pb"><span class="category">1.18+ SSG -</span><span class="time">3:12</span></p>
+                    </div>
+                </div>
+            `)
+    }
+}
 
 export class Connect4Window extends Window {
     constructor(locale) {

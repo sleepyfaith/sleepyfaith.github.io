@@ -36,6 +36,7 @@
     "apps": {
         "likes": "vind-ik-leuks", 
         "socials": "socials", 
+        "speedruns": "speedruns",
         "specs": "pc-specificaties", 
 
         "projects": "projecten",

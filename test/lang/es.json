@@ -36,6 +36,7 @@
     "apps": {
         "likes": "gustos", 
         "socials": "sociales", 
+        "speedruns": "speedruns",
         "specs": "specs-de-mi-pc", 
 
         "projects": "proyectos",

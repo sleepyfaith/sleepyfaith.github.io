@@ -35,6 +35,7 @@
     "apps": {
         "likes": "mag-ich", 
         "socials": "sozial",
+        "speedruns": "speedruns",
         "specs": "spezifikationen", 
         "projects": "projekte",
         "about": "über-mich",

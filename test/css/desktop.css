@@ -36,10 +36,10 @@ body {
     }
 
     .app-icon.selected {
-        background-color: rgb(var(--accent1), 0.7) !important;
+        background-color: rgb(var(--accent-pink), 0.7) !important;
     }
     .app-icon:hover {
-        background-color: rgb(var(--accent1), 0.5);
+        background-color: rgb(var(--accent-pink), 0.5);
     }
 
     .app-icon i {
@@ -81,6 +81,7 @@ body {
     height: 5rem;
     font-size: 2rem;
 }
+
 
 #projects, #socials {
     transform: translate(-25%, 0%);

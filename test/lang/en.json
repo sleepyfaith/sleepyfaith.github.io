@@ -39,6 +39,7 @@
     "apps": {
         "likes": "likes", 
         "socials": "socials",
+        "speedruns": "speedruns",
         "specs": "pc-specs", 
         "projects": "projects",
         "about": "about-me",

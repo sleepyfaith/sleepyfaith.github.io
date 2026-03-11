@@ -1,4 +1,4 @@
-import { AboutWindow, LikesWindow, ProjectsWindow, SpecsWindow, SocialsWindow, SettingsWindow } from './windows.js';
+import { AboutWindow, LikesWindow, ProjectsWindow, SpecsWindow, SocialsWindow, SettingsWindow, SpeedrunsWindow } from './windows.js';
 import { updateClock, loadTheme, loadLang, preloadLocales, closeTopWindow, addActiveWindowWidgetListeners } from './util.js';
 
 document.getElementById("about").addEventListener("click", () => {
@@ -40,6 +40,14 @@ document.getElementById("socials").addEventListener("click", () => {
     .then(res => res.json())
     .then(locale => {
         new SocialsWindow(locale);
+    });
+}) 
+document.getElementById("speedruns").addEventListener("click", () => {
+    let currentLang = document.documentElement.lang.toLowerCase()
+    fetch(`lang/${currentLang}.json`)
+    .then(res => res.json())
+    .then(locale => {
+        new SpeedrunsWindow(locale);
     });
 }) 
 document.getElementById("settings").addEventListener("click", () => {
